@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/search_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/mail_button"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="22dp"
+        android:background="@color/Blue"
+        android:minHeight="138dp"
+        android:minWidth="108dp"
+        android:text="Search"
+        android:textColor="@style/AppBaseTheme"
+        android:textStyle="normal"
+        android:typeface="sans" />
+
+    <Button
+        android:id="@+id/mail_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/search_button"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="150dp"
+        android:background="@color/Blue"
+        android:minHeight="138dp"
+        android:minWidth="108dp"
+        android:text="Mail"
+        android:textColor="@style/AppBaseTheme"
+        android:textStyle="normal"
+        android:typeface="sans" />
+
+    <Button
+        android:id="@+id/add_item_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/search_button"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="21dp"
+        android:background="@color/Blue"
+        android:minHeight="138dp"
+        android:minWidth="108dp"
+        android:text="Add"
+        android:textColor="@style/AppBaseTheme"
+        android:textStyle="normal"
+        android:typeface="sans" />
+
+    <Button
+        android:id="@+id/favorites_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/search_button"
+        android:layout_alignBottom="@+id/search_button"
+        android:layout_alignLeft="@+id/add_item_button"
+        android:background="@color/Blue"
+        android:minHeight="138dp"
+        android:minWidth="108dp"
+        android:text="Favorites"
+        android:textColor="@style/AppBaseTheme"
+        android:textStyle="normal"
+        android:typeface="sans" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/logo" />
+
+</RelativeLayout>
