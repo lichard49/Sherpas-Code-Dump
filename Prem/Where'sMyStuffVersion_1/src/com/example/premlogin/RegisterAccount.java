@@ -22,7 +22,7 @@ public class RegisterAccount extends Activity {
         /* Get user Name */
 		
 		
-		Button signUp = (Button) findViewById(R.id.button1);
+		Button signUp = (Button) findViewById(R.id.btn_login);
 
 		signUp.setOnClickListener(new View.OnClickListener() {
 

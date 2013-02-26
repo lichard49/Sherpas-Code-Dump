@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:minWidth="85sp"
-    tools:context=".MainActivity" >
+    tools:context=".MainActivity" 
+    android:background="@android:color/black">
 
     <EditText
         android:id="@+id/editText3"
@@ -13,7 +14,14 @@
         android:layout_alignBottom="@+id/TextView01"
         android:layout_marginLeft="17dp"
         android:layout_toRightOf="@+id/TextView01"
-        android:ems="10" />
+        android:ems="10"
+        android:inputType="text"
+        android:singleLine="true"
+        android:imeOptions="actionNext"
+        android:background="@drawable/textbox_outline" >
+        
+        <requestFocus />
+    </EditText>
 
     <EditText
         android:id="@+id/editText4"
@@ -22,7 +30,11 @@
         android:layout_alignBaseline="@+id/textView1"
         android:layout_alignBottom="@+id/textView1"
         android:layout_alignLeft="@+id/editText3"
-        android:ems="10" />
+        android:ems="10"
+        android:inputType="text"
+        android:singleLine="true"
+        android:imeOptions="actionNext"
+        android:background="@drawable/textbox_outline" />
 
     <TextView
         android:id="@+id/TextView01"
@@ -32,7 +44,8 @@
         android:layout_alignRight="@+id/textView1"
         android:layout_marginTop="104dp"
         android:text="First Name"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/Blue" />
 
     <TextView
         android:id="@+id/textView1"
@@ -42,7 +55,8 @@
         android:layout_below="@+id/editText3"
         android:layout_marginTop="28dp"
         android:text="Last Name"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/Blue" />
 
     <TextView
         android:id="@+id/textView7"
@@ -66,7 +80,8 @@
         android:layout_below="@+id/editText4"
         android:layout_marginTop="25dp"
         android:text="Cell #:"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/Blue" />
 
     <EditText
         android:id="@+id/editText2"
@@ -77,7 +92,10 @@
         android:layout_alignParentRight="true"
         android:ems="10"
         android:inputType="phone"
-        android:maxWidth="10dp" />
+        android:maxWidth="10dp"
+        android:singleLine="true"
+        android:imeOptions="actionNext"
+        android:background="@drawable/textbox_outline" />
 
     <TextView
         android:id="@+id/textView2"
@@ -87,7 +105,8 @@
         android:layout_below="@+id/editText2"
         android:layout_marginTop="32dp"
         android:text="E-mail:"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/Blue" />
 
     <TextView
         android:id="@+id/textView5"
@@ -97,7 +116,22 @@
         android:layout_below="@+id/textView4"
         android:layout_marginTop="26dp"
         android:text="Password"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/Blue" />
+
+    <EditText
+        android:id="@+id/editText5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView2"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_alignLeft="@+id/editText2"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:singleLine="true"
+        android:imeOptions="actionNext"
+        android:background="@drawable/textbox_outline" >
+    </EditText>
 
     <EditText
         android:id="@+id/editText1"
@@ -108,21 +142,11 @@
         android:layout_alignRight="@+id/textView4"
         android:layout_toRightOf="@+id/textView1"
         android:ems="10"
-        android:inputType="textPassword" />
-
-    <EditText
-        android:id="@+id/editText5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView2"
-        android:layout_alignBottom="@+id/textView2"
-        android:layout_alignLeft="@+id/editText2"
-        android:ems="10"
-        android:inputType="textEmailAddress" >
-
-        <requestFocus />
-    </EditText>
-
+        android:inputType="textPassword"
+        android:singleLine="true"
+        android:imeOptions="actionDone"
+        android:background="@drawable/textbox_outline" />
+    
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
@@ -131,7 +155,8 @@
         android:layout_below="@+id/editText5"
         android:layout_marginTop="16dp"
         android:text="Your e-mail will be used as your username."
-        android:textAppearance="?android:attr/textAppearanceSmall" />
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/Blue" />
 
     <Button
         android:id="@+id/btn_login"
@@ -144,7 +169,6 @@
         android:minHeight="32dp"
         android:minWidth="260dp"
         android:text="Sign Up!"
-        android:textColor="@style/AppBaseTheme"
         android:textStyle="bold"
         android:typeface="sans" />
 
