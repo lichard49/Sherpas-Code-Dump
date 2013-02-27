@@ -71,7 +71,7 @@ public class LoginActivity extends Activity {
 	
 	private boolean validUser(String name,String password) {
 		// TODO Auto-generated method stub
-		Log.e("Check",Database.map.get("Prem"));
+		Log.e("Check",Database.map.get("at.com").getFirstName());
 		boolean flag=Database.map.containsKey(name);
 		if(flag)
 			return password.equals(Database.map.get(name));

@@ -22,6 +22,8 @@ public class RegisterAccount extends Activity
 		final Button signUp = (Button) findViewById(R.id.signup_button);
 		final EditText email = (EditText) findViewById(R.id.email);
 		final EditText password = (EditText) findViewById(R.id.password);
+		final EditText firstName = (EditText) findViewById(R.id.first_name);
+		final EditText lastName = (EditText) findViewById(R.id.last_name);
 		final TextView registerTitle = (TextView) findViewById(R.id.register_title);
 		Typeface font = Typeface.createFromAsset(getAssets(), "fonts/bauhaus_93.ttf");
 		registerTitle.setTypeface(font);
@@ -34,19 +36,30 @@ public class RegisterAccount extends Activity
 				
 				String pw = password.getText().toString();
 				
-				Log.e("UserName(Email)", userName);
-				Log.e("Password", pw);
-				Database.map.put(userName, pw);
+				String fn=firstName.getText().toString();
 				
-				Intent intent = new Intent(getApplicationContext(),	RegisterAccount.class);
-				/* Start LoginSuccess Activity */
-				startActivity(intent);
+				String ln=lastName.getText().toString();
 				
-				Log.e("Register", "clicked");
-				Intent loginIntent = new Intent(getApplicationContext(),LoginActivity.class);
-				/* Start LoginSuccess Activity */
-				startActivity(loginIntent);
-				Toast.makeText(getApplicationContext(),"Thank you for Registering",Toast.LENGTH_LONG).show();
+				if(!(Database.map.containsKey(email)))
+				{
+						Log.e("UserName(Email)", userName);
+						Log.e("Password", pw);
+						Database.map.put(userName, new Person(fn,ln,userName));
+						
+						Intent intent = new Intent(getApplicationContext(),	RegisterAccount.class);
+						/* Start LoginSuccess Activity */
+						startActivity(intent);
+						
+						Log.e("Register", "clicked");
+						Intent loginIntent = new Intent(getApplicationContext(),LoginActivity.class);
+						/* Start LoginSuccess Activity */
+						startActivity(loginIntent);
+						Toast.makeText(getApplicationContext(),"Thank you for Registering",Toast.LENGTH_LONG).show();
+				}
+				else
+				{
+					Toast.makeText(getApplicationContext(),"That Username is taken. Sorry!",Toast.LENGTH_LONG).show();
+				}
 			}
 		});
 	}

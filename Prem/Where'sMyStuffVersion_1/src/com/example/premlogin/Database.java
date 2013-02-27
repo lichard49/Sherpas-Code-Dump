@@ -5,13 +5,11 @@ import java.util.Map;
 
 public class Database {
 
-	static  Map<String, String> map;
+	static  Map<String, Person> map;
 	static {
-	    map = new HashMap<String, String>();
-	    String[][] pairs = {
-	        {"a","t"},{"Prem", "Saravanan"},{"Richard", "Li"},{"Samuel","Clarke"} };
-	    for (String[] pair : pairs) {
-	        map.put(pair[0], pair[1]);
-	    }
+	    map = new HashMap<String, Person>();
+	     
+	       Person temp=new Person("a","t","t.com");
+	        map.put(temp.getEmail(),temp);
 	}
 }
