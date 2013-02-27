@@ -16,8 +16,11 @@ public final class R {
         public static final int White=0x7f060002;
     }
     public static final class drawable {
-        public static final int ic_launcher=0x7f020000;
-        public static final int logo=0x7f020001;
+        public static final int add=0x7f020000;
+        public static final int hailey=0x7f020001;
+        public static final int ic_launcher=0x7f020002;
+        public static final int logo=0x7f020003;
+        public static final int mail=0x7f020004;
     }
     public static final class id {
         public static final int Donate=0x7f080034;
@@ -28,7 +31,6 @@ public final class R {
         public static final int RelativeLayout1=0x7f08000d;
         public static final int Signup_Button=0x7f080042;
         public static final int TextView01=0x7f080001;
-        public static final int add_item_button=0x7f08004b;
         public static final int button1=0x7f080005;
         public static final int donate_check_box_email=0x7f08003f;
         public static final int donate_date_text=0x7f08003c;
@@ -47,7 +49,6 @@ public final class R {
         public static final int editText3=0x7f080000;
         public static final int editText4=0x7f080002;
         public static final int editText5=0x7f08000c;
-        public static final int favorites_button=0x7f08004c;
         public static final int found_check_box_email=0x7f08002f;
         public static final int found_date_text=0x7f08002d;
         public static final int found_heirloom_radio_button=0x7f080026;
@@ -85,11 +86,10 @@ public final class R {
         public static final int lost_misc_radio_button=0x7f080018;
         public static final int lost_reward_text=0x7f080019;
         public static final int lost_submit_button=0x7f080020;
-        public static final int mail_button=0x7f08004a;
-        public static final int menu_settings=0x7f08004d;
+        public static final int menu_settings=0x7f08004a;
         public static final int password=0x7f080046;
         public static final int password_text=0x7f080045;
-        public static final int search_button=0x7f080049;
+        public static final int spinner1=0x7f080049;
         public static final int textView1=0x7f080003;
         public static final int textView2=0x7f080008;
         public static final int textView3=0x7f080006;
