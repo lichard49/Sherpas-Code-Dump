@@ -19,16 +19,19 @@ public class Person {
 	/** the persons email */
 	private String email;
 	
+	private String password;
+	
 	/**
 	 * Makes a new person
 	 * @param n the name
 	 * @param u the id
 	 * @param e the email
 	 */
-	public Person(String fn, String ln, String e) {
+	public Person(String fn, String ln, String e, String pw) {
 		firstName = fn;
 		lastName = ln;
 		email = e;
+		password = pw;
 	}
 	
 	/**
@@ -53,4 +56,5 @@ public class Person {
 	
 	public String getEmail() { return email; }
 
+	public String getPassword() { return password; }
 }

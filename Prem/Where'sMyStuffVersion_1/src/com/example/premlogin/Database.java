@@ -9,7 +9,8 @@ public class Database {
 	static {
 	    map = new HashMap<String, Person>();
 	     
-	       Person temp=new Person("a","t","t.com");
+	       Person temp=new Person("a","t","t.com", "t");
 	        map.put(temp.getEmail(),temp);
 	}
+	public static Person loggedIn;
 }

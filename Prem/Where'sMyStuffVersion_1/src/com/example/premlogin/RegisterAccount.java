@@ -40,11 +40,11 @@ public class RegisterAccount extends Activity
 				
 				String ln=lastName.getText().toString();
 				
-				if(!(Database.map.containsKey(email)))
+				if(!(Database.map.containsKey(userName)))
 				{
 						Log.e("UserName(Email)", userName);
 						Log.e("Password", pw);
-						Database.map.put(userName, new Person(fn,ln,userName));
+						Database.map.put(userName, new Person(fn,ln,userName, pw));
 						
 						Intent intent = new Intent(getApplicationContext(),	RegisterAccount.class);
 						/* Start LoginSuccess Activity */

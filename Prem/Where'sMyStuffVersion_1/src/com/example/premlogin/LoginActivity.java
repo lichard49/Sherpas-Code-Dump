@@ -22,22 +22,31 @@ public class LoginActivity extends Activity {
 		/* Set OnClickListner to the login button */
 		ImageButton login = (ImageButton) findViewById(R.id.Login_Button);
 
+		//final EditText firstName = (EditText) findViewById(R.id.first_name);
+		//final EditText lastName = (EditText) findViewById(R.id.last_name);
+		final EditText loginName = (EditText) findViewById(R.id.username);
+		final EditText password = (EditText) findViewById(R.id.password);
+		
 		login.setOnClickListener(new View.OnClickListener() {
 
 			public void onClick(View v) {
 				Log.d("YourTag", "YourOutputa");
 				/* Get user Name */
-				EditText loginName = (EditText) findViewById(R.id.username);
-				String name = loginName.getText().toString();
-				EditText password = (EditText) findViewById(R.id.password);
-				String pw = password.getText().toString();
 				
-				Log.e("Login", name);
+				String email = loginName.getText().toString();		
+				String pw = password.getText().toString();
+				//String first = firstName.getText().toString();
+				//String last = lastName.getText().toString();
+				
+				Log.e("Login", email);
 				Log.e("Password", pw);
 				
-				if(validUser(name,pw))
+				if(validUser(new Person("", "", email, pw)))
 				{
 					Log.d("YourTag", "YourOutputab");
+					
+					Database.loggedIn = new Person("", "", email, pw);
+					
 					/* create Intent and set LoginSuccess Activity */
 					Intent intent = new Intent(getApplicationContext(),	LoginSuccess.class);
 					Toast.makeText(getApplicationContext(),"Credentials Correct",Toast.LENGTH_LONG).show();
@@ -69,16 +78,16 @@ public class LoginActivity extends Activity {
 			
 	}
 	
-	private boolean validUser(String name,String password) {
+	private boolean validUser(Person p) 
+	{
 		// TODO Auto-generated method stub
-		Log.e("Check",Database.map.get("at.com").getFirstName());
+		//Log.e("Check",Database.map.get("at.com").getFirstName());
+		/*
 		boolean flag=Database.map.containsKey(name);
 		if(flag)
 			return password.equals(Database.map.get(name));
-		return false;
+			*/
+		return Database.map.containsKey(p.getEmail()) && p.getPassword().equals(Database.map.get(p.getEmail()).getPassword());
 	}
 	
 }
-
-
-
