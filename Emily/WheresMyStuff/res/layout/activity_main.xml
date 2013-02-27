@@ -50,7 +50,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_alignRight="@+id/button1"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="19dp"
         android:text="Register Account"
         android:textAppearance="?android:attr/textAppearanceLarge"
@@ -58,27 +58,6 @@
         android:textSize="34sp"
         android:textStyle="bold"
         android:typeface="sans" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/button1"
-        android:layout_below="@+id/editText4"
-        android:layout_marginTop="25dp"
-        android:text="Cell #:"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView3"
-        android:layout_alignBottom="@+id/textView3"
-        android:layout_alignParentRight="true"
-        android:ems="10"
-        android:inputType="phone"
-        android:maxWidth="10dp" />
 
     <TextView
         android:id="@+id/textView2"
@@ -134,19 +113,34 @@
         android:text="Your e-mail will be used as your username."
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
-    <Button
-        android:id="@+id/button1"
+    <TextView
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editText1"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_below="@+id/editText4"
+        android:layout_marginTop="28dp"
+        android:text="Cell #:"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView3"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_alignParentRight="true"
+        android:ems="10"
+        android:inputType="phone"
+        android:maxWidth="10dp" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="54dp"
-        android:background="@color/Blue"
-        android:minHeight="32dp"
-        android:minWidth="260dp"
-        android:text="Sign Up!"
-        android:textColor="@style/AppBaseTheme"
-        android:textStyle="bold"
-        android:typeface="sans" />
+        android:layout_marginBottom="50dp"
+        android:src="@drawable/signup" />
 
 </RelativeLayout>
