@@ -13,7 +13,8 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name=".LoginActivity"
-            android:label="login" >
+            android:label="login"
+            android:theme="@android:style/Theme.Black.NoTitleBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -23,12 +24,14 @@
         <activity
              android:label="Result"
              android:name=".LoginSuccess"
-             android:screenOrientation="portrait" >  
+             android:screenOrientation="portrait"
+             android:theme="@android:style/Theme.Black.NoTitleBar" >  
         </activity>
          <activity
              android:label="Result2"
              android:name=".RegisterAccount"
-             android:screenOrientation="portrait" >  
+             android:screenOrientation="portrait"
+             android:theme="@android:style/Theme.Black.NoTitleBar" >
         </activity>
     </application>
 </manifest>

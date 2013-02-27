@@ -55,7 +55,7 @@ public class LoginActivity extends Activity {
 		});
 		
 
-			Button register = (Button) findViewById(R.id.Signup_Button);
+			Button register = (Button) findViewById(R.id.signup_button);
 
 			register.setOnClickListener(new View.OnClickListener() {
 

@@ -1,7 +1,5 @@
 package com.example.premlogin;
 
-import com.example.premlogin.LoginActivity;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,27 +7,26 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
-public class RegisterAccount extends Activity {
+public class RegisterAccount extends Activity 
+{
 
-	public void onCreate(Bundle savedInstanceState) {
+	public void onCreate(Bundle savedInstanceState) 
+	{
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.register_layout);
         
-        TextView txt_registerNow	=	(TextView) findViewById(R.id.Signup_Button);
-        /* Get user Name */
+		final Button signUp = (Button) findViewById(R.id.signup_button);
+		final EditText email = (EditText) findViewById(R.id.email);
+		final EditText password = (EditText) findViewById(R.id.password);
 		
-		
-		Button signUp = (Button) findViewById(R.id.btn_login);
-
-		signUp.setOnClickListener(new View.OnClickListener() {
-
-			public void onClick(View v) {
-				EditText loginName = (EditText) findViewById(R.id.editText5);
-				String userName = loginName.getText().toString();
-				EditText password = (EditText) findViewById(R.id.editText1);
+		signUp.setOnClickListener(new View.OnClickListener() 
+		{
+			public void onClick(View v) 
+			{	
+				String userName = email.getText().toString();
+				
 				String pw = password.getText().toString();
 				
 				Log.e("UserName(Email)", userName);
@@ -47,7 +44,5 @@ public class RegisterAccount extends Activity {
 				Toast.makeText(getApplicationContext(),"Thank you for Registering",Toast.LENGTH_LONG).show();
 			}
 		});
-		
-		
 	}
 }

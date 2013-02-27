@@ -8,25 +8,26 @@
         android:id="@+id/Login_Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/password"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
+        android:layout_alignRight="@+id/password"
         android:layout_marginBottom="122dp"
+        android:background="@color/Blue"
         android:minHeight="48dp"
         android:minWidth="244dp"
         android:text="Login"
         android:textStyle="bold"
-        android:typeface="sans" 
-        android:background="@color/Blue" />
+        android:typeface="sans" />
 
     <Button
-        android:id="@+id/Signup_Button"
+        android:id="@+id/signup_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="40dp"
         android:minHeight="38dp"
-        android:minWidth="180dp"
+        
         android:text="Sign Up"
         android:textStyle="bold"
         android:typeface="sans" 
@@ -57,12 +58,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/password_text"
+        android:layout_alignLeft="@+id/password"
         android:layout_alignRight="@+id/password"
         android:layout_marginBottom="23dp"
+        android:background="@drawable/textbox_outline"
         android:ems="10"
-        android:inputType="text"
         android:imeOptions="actionNext"
-        android:background="@drawable/textbox_outline" >
+        android:inputType="text"
+        android:textColor="@color/Blue" >
         
         <requestFocus />
     </EditText> 
@@ -78,7 +81,8 @@
         android:ems="10"
         android:inputType="textPassword" 
         android:imeOptions="actionDone" 
-        android:background="@drawable/textbox_outline" />
+        android:background="@drawable/textbox_outline"
+        android:textColor="@color/Blue" />
 
     <ImageView
         android:id="@+id/imageView1"
