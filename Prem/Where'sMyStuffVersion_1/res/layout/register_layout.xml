@@ -11,7 +11,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:text="Register Account"
+        android:text="@string/register_account"
         android:textColor="@color/Blue"
         android:textSize="35sp" />
 
@@ -32,20 +32,13 @@
             android:layout_weight="1" >
 
             <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:paddingRight="5dp"
-                android:text="First Name:"
-                android:textColor="@color/Blue"
+                style="@style/registration_description"
+                android:text="@string/first_name"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
             <EditText
                 android:id="@+id/first_name"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:ems="10"
+                style="@style/registration_textbox"
                 android:inputType="textPersonName"
                 android:background="@drawable/textbox_outline" >
 
@@ -60,20 +53,13 @@
             android:layout_weight="1" >
             
             <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:paddingRight="5dp"
-                android:text="Last Name:"
-                android:textColor="@color/Blue"
+                style="@style/registration_description"
+                android:text="@string/last_name"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
             <EditText
                 android:id="@+id/last_name"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:ems="10"
+				style="@style/registration_textbox"
                 android:inputType="textPersonName"
                 android:background="@drawable/textbox_outline" />
             
@@ -85,20 +71,13 @@
             android:layout_weight="1" >
             
             <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:paddingRight="5dp"
-                android:text="Cell #:"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/Blue" />
+                style="@style/registration_description"
+                android:text="@string/cell_number"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
 
             <EditText
                 android:id="@+id/phone_number"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:ems="10"
+                style="@style/registration_textbox"
                 android:inputType="phone"
                 android:background="@drawable/textbox_outline" />
             
@@ -110,20 +89,13 @@
             android:layout_weight="0.35" >
             
             <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:paddingRight="5dp"
-                android:text="E-mail:"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/Blue" />
+                style="@style/registration_description"
+                android:text="@string/email"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
 
             <EditText
                 android:id="@+id/email"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:ems="10"
+                style="@style/registration_textbox"
                 android:inputType="textWebEmailAddress"
                 android:background="@drawable/textbox_outline" />
             
@@ -137,7 +109,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Your e-mail address will be used as your username"
+                android:text="@string/email_description"
                 android:textColor="@color/Blue"
                 android:textAppearance="?android:attr/textAppearanceSmall" />
         </TableRow>
@@ -148,20 +120,13 @@
             android:layout_weight="1" >
             
             <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:paddingRight="5dp"
-                android:text="Password:"
-                android:textColor="@color/Blue"
+                style="@style/registration_description"
+                android:text="@string/password"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
             
             <EditText
                 android:id="@+id/password"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:ems="10"
+                style="@style/registration_textbox"
                 android:inputType="textWebPassword"
                 android:background="@drawable/textbox_outline" />
             
@@ -177,6 +142,6 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="20dp"
         android:background="@color/Blue"
-        android:text="Sign up!" />
+        android:text="@string/sign_up" />
     
 </RelativeLayout>

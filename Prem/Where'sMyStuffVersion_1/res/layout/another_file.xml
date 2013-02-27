@@ -15,7 +15,7 @@
         android:background="@color/Blue"
         android:minHeight="48dp"
         android:minWidth="244dp"
-        android:text="Login"
+        android:text="@string/login"
         android:textStyle="bold"
         android:typeface="sans" />
 
@@ -27,8 +27,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="40dp"
         android:minHeight="38dp"
-        
-        android:text="Sign Up"
+        android:text="@string/sign_up"
         android:textStyle="bold"
         android:typeface="sans" 
         android:background="@color/Blue" />
@@ -39,7 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/username"
         android:layout_centerHorizontal="true"
-        android:text="Username:"
+        android:text="@string/username"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textColor="@color/Blue" />
 
@@ -49,7 +48,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/password"
         android:layout_alignLeft="@+id/username_text"
-        android:text="Password:"
+        android:text="@string/password"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textColor="@color/Blue" />
 
@@ -85,6 +84,7 @@
         android:textColor="@color/Blue" />
 
     <ImageView
+        android:contentDescription="Where's my stuff?"
         android:id="@+id/imageView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

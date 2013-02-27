@@ -2,11 +2,13 @@ package com.example.premlogin;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class RegisterAccount extends Activity 
@@ -20,6 +22,9 @@ public class RegisterAccount extends Activity
 		final Button signUp = (Button) findViewById(R.id.signup_button);
 		final EditText email = (EditText) findViewById(R.id.email);
 		final EditText password = (EditText) findViewById(R.id.password);
+		final TextView registerTitle = (TextView) findViewById(R.id.register_title);
+		Typeface font = Typeface.createFromAsset(getAssets(), "fonts/bauhaus_93.ttf");
+		registerTitle.setTypeface(font);
 		
 		signUp.setOnClickListener(new View.OnClickListener() 
 		{

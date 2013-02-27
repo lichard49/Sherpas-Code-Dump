@@ -4,6 +4,21 @@
     <string name="app_name">Where\'s My Stuff?</string>
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
+    
+    <!-- Login -->
     <string name="login">Login</string>
+    <string name="username">Username (E-mail"):</string>
+    <string name="password">Password:</string>
+    
+    
+    <!-- Registration -->
+    <string name="register_account">Register Account</string>
+    <string name="first_name">First Name:</string>
+    <string name="last_name">Last Name:</string>
+    <string name="cell_number">Cell #:</string>
+    <string name="email">E-mail:</string>
+    <string name="email_description">Your e-mail address will be used as your username</string>
+    <string name="password">Password:</string>
+    <string name="sign_up">Sign up!</string>
 
 </resources>
