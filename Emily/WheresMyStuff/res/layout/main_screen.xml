@@ -7,6 +7,17 @@
     android:orientation="vertical" >
 
     <ImageButton
+        android:id="@+id/favorites_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="51dp"
+        android:layout_marginLeft="43dp"
+        android:background="@color/Black"
+        android:src="@drawable/favorite" />
+
+    <ImageButton
         android:id="@+id/add_item_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -41,16 +52,5 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:src="@drawable/logo" />
-
-    <ImageButton
-        android:id="@+id/favorites_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginBottom="18dp"
-        android:layout_marginLeft="46dp"
-        android:background="@color/Black"
-        android:src="@drawable/favorite" />
     
 </RelativeLayout>

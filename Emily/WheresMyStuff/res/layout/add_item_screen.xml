@@ -1,15 +1,220 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/Black" >
 
     <Spinner
-        android:id="@+id/spinner1"
+        android:id="@+id/item_spinner"
+        style="@style/AppBaseTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="27dp"
+        android:layout_marginTop="57dp"
+        android:background="@color/Blue"
+        android:prompt="@string/choose_prompt"
+        android:entries="@array/item_type_array"
+        android:minWidth="80dp"
+        tools:listitem="@android:layout/simple_spinner_dropdown_item" />
+
+    <TextView
+        android:id="@+id/item_type_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/item_spinner"
+        android:layout_alignBottom="@+id/item_spinner"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="30dp"
+        android:text="Type:"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/White" />
+
+    <TextView
+        android:id="@+id/item_name_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/item_type_text"
+        android:layout_below="@+id/item_spinner"
+        android:layout_marginTop="23dp"
+        android:text="Item Name:"
+        android:textAppearance="?android:attr/textAppearanceSmall" 
+        android:textColor="@color/White"/>
+
+    <TextView
+        android:id="@+id/item_description_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/item_name_text"
+        android:layout_below="@+id/item_name_text"
+        android:layout_marginTop="30dp"
+        android:text="Item Description:"
+        android:textAppearance="?android:attr/textAppearanceSmall" 
+        android:textColor="@color/White"/>
+
+    <TextView
+        android:id="@+id/item_category_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/item_description_text"
+        android:layout_below="@+id/item_description_text"
+        android:layout_marginTop="34dp"
+        android:text="Category:"
+        android:textAppearance="?android:attr/textAppearanceSmall" 
+        android:textColor="@color/White"/>
+
+    <Spinner
+        android:id="@+id/category_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/item_category_text"
+        android:layout_alignBottom="@+id/item_category_text"
+        android:layout_alignLeft="@+id/item_spinner"
+        android:layout_alignRight="@+id/item_spinner"
+        android:background="@color/Blue"
+        android:entries="@array/category_array"
+        android:prompt="@string/choose_prompt"
+        tools:listitem="@android:layout/simple_spinner_dropdown_item" />
+
+    <TextView
+        android:id="@+id/item_location_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/item_category_text"
+        android:layout_below="@+id/category_spinner"
+        android:layout_marginTop="31dp"
+        android:text="Location:"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/White" />
+
+    <TextView
+        android:id="@+id/item_reward_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/item_location_text"
+        android:layout_below="@+id/item_location_text"
+        android:layout_marginTop="38dp"
+        android:text="Reward:"
+        android:textAppearance="?android:attr/textAppearanceSmall" 
+        android:textColor="@color/White" />
+
+    <TextView
+        android:id="@+id/item_date_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/item_reward_text"
+        android:layout_below="@+id/item_reward_text"
+        android:layout_marginTop="30dp"
+        android:text="Date:"
+        android:textAppearance="?android:attr/textAppearanceSmall" 
+        android:textColor="@color/White" />
+
+    <TextView
+        android:id="@+id/item_contact_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/item_date_text"
+        android:layout_below="@+id/item_date_text"
+        android:layout_marginTop="28dp"
+        android:text="Method of Contact:"
+        android:textAppearance="?android:attr/textAppearanceSmall" 
+        android:textColor="@color/White" />
+
+    <CheckBox
+        android:id="@+id/email_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/item_contact_text"
+        android:layout_alignBottom="@+id/item_contact_text"
+        android:layout_alignLeft="@+id/category_spinner"
+        android:text="E-mail" 
+        android:textColor="@color/White" />
+
+    <CheckBox
+        android:id="@+id/mobile_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/email_checkbox"
+        android:layout_below="@+id/item_contact_text"
+        android:text="Mobile" 
+        android:textColor="@color/White" />
+
+    <ImageButton
+        android:id="@+id/imageButton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/Black"
+        android:src="@drawable/submit_button" />
+
+    <ImageView
+        android:id="@+id/imageView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="25dp" />
+        android:src="@drawable/add_icon" />
+
+    <EditText
+        android:id="@+id/name_text_field"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/item_name_text"
+        android:layout_alignBottom="@+id/item_name_text"
+        android:layout_marginLeft="16dp"
+        android:layout_toRightOf="@+id/item_name_text"
+        android:ems="10"
+        android:textColor="@color/White" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/description_text_field"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/item_description_text"
+        android:layout_alignBottom="@+id/item_description_text"
+        android:layout_toRightOf="@+id/item_contact_text"
+        android:ems="10"
+        android:textColor="@color/White" 
+    />
+
+    <EditText
+        android:id="@+id/location_text_field"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/item_location_text"
+        android:layout_alignBottom="@+id/item_location_text"
+        android:layout_toRightOf="@+id/item_name_text"
+        android:ems="10" 
+        android:textColor="@color/White"/>
+
+    <EditText
+        android:id="@+id/reward_text_field"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/item_reward_text"
+        android:layout_alignBottom="@+id/item_reward_text"
+        android:layout_toRightOf="@+id/item_name_text"
+        android:ems="10"
+        android:inputType="number"
+        android:textColor="@color/White" />
+
+    <EditText
+        android:id="@+id/date_text_field"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/item_date_text"
+        android:layout_alignBottom="@+id/item_date_text"
+        android:layout_toRightOf="@+id/item_reward_text"
+        android:ems="10"
+        android:inputType="date"
+        android:textColor="@color/White" />
+
+"
 
 </RelativeLayout>
