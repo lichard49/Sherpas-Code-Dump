@@ -1,26 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout 
+<RelativeLayout 
 	 android:weightSum="1"
 	 android:layout_height="wrap_content" 
 	 android:layout_width="wrap_content" 
 	 android:orientation="vertical" 
-	 xmlns:android="http://schemas.android.com/apk/res/android"> 
+	 xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/logo" />
+
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/logo" >
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="0px"
+            android:layout_weight="1" >
+
+            <ImageButton
+                android:id="@+id/imageButton1"
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingLeft="40dp"
+                android:background="@android:color/black"
+                android:src="@drawable/mail" />
+
+            <ImageButton
+                android:id="@+id/imageButton2"
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingRight="40dp"
+                android:background="@android:color/black"
+                android:src="@drawable/add" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="0px"
+            android:layout_weight="3" >
+
+            <ImageButton
+                android:id="@+id/imageButton3"
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingLeft="40dp"
+                android:background="@android:color/black"
+                android:src="@drawable/favorite" />
+
+            <ImageButton
+                android:id="@+id/imageButton4"
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingRight="40dp"
+                android:background="@android:color/black"
+                android:src="@drawable/search" />
+
+        </TableRow>
+    </TableLayout>
 	 
-			<TextView
-			    android:layout_height="wrap_content" 
-			    android:layout_width="158dp" 
-			    android:layout_weight="0.06" 
-			    android:id="@+id/textView1" 
-			    android:textAppearance="?android:attr/textAppearanceLarge" 
-			    android:text="Hello"/> 
-			    
-			<TextView 
-			    android:layout_height="wrap_content" 
-			    android:layout_width="wrap_content" 
-			    android:layout_weight="0.06" 
-			    android:id="@+id/txt_loggedName" 
-			    android:textAppearance="?android:attr/textAppearanceLarge" 
-			    android:text="Welcome to Where's my Stuff"/>
-			
- </LinearLayout>
+ </RelativeLayout>

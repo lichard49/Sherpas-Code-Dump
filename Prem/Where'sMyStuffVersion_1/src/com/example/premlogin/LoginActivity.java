@@ -1,16 +1,12 @@
 package com.example.premlogin;
 
-import java.util.HashMap;
-import java.util.Hashtable;
-import java.util.Map;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 public class LoginActivity extends Activity {
@@ -24,7 +20,7 @@ public class LoginActivity extends Activity {
 		setContentView(R.layout.another_file);
 
 		/* Set OnClickListner to the login button */
-		Button login = (Button) findViewById(R.id.Login_Button);
+		ImageButton login = (ImageButton) findViewById(R.id.Login_Button);
 
 		login.setOnClickListener(new View.OnClickListener() {
 
@@ -44,8 +40,10 @@ public class LoginActivity extends Activity {
 					Log.d("YourTag", "YourOutputab");
 					/* create Intent and set LoginSuccess Activity */
 					Intent intent = new Intent(getApplicationContext(),	LoginSuccess.class);
+					Toast.makeText(getApplicationContext(),"Credentials Correct",Toast.LENGTH_LONG).show();
 					/* Start LoginSuccess Activity */
 					startActivity(intent);
+					finish();
 				}
 				else 
 					Toast.makeText(getApplicationContext(),"Credentials Incorrect",Toast.LENGTH_LONG).show();
@@ -55,7 +53,7 @@ public class LoginActivity extends Activity {
 		});
 		
 
-			Button register = (Button) findViewById(R.id.signup_button);
+			ImageButton register = (ImageButton) findViewById(R.id.signup_button);
 
 			register.setOnClickListener(new View.OnClickListener() {
 
