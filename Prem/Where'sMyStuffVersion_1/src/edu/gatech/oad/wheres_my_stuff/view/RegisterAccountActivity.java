@@ -1,10 +1,7 @@
 package edu.gatech.oad.wheres_my_stuff.view;
 
-import edu.gatech.oad.wheres_my_stuff.R;
-import edu.gatech.oad.wheres_my_stuff.R.id;
-import edu.gatech.oad.wheres_my_stuff.R.layout;
-import edu.gatech.oad.wheres_my_stuff.model.Database;
-import edu.gatech.oad.wheres_my_stuff.model.Person;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -12,14 +9,19 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.View.OnFocusChangeListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import edu.gatech.oad.wheres_my_stuff.R;
+import edu.gatech.oad.wheres_my_stuff.model.Database;
+import edu.gatech.oad.wheres_my_stuff.model.Person;
 
 public class RegisterAccountActivity extends Activity 
 {
-
+	private final String expression="^[\\w\\-]([\\.\\w])+[\\w]+@([\\w\\-]+\\.)+[A-Z]{2,4}$";
+	
 	public void onCreate(Bundle savedInstanceState) 
 	{
         super.onCreate(savedInstanceState);
@@ -39,11 +41,8 @@ public class RegisterAccountActivity extends Activity
 			public void onClick(View v) 
 			{	
 				String userName = email.getText().toString();
-				
 				String pw = password.getText().toString();
-				
 				String fn=firstName.getText().toString();
-				
 				String ln=lastName.getText().toString();
 				
 				if(!(Database.map.containsKey(userName)))
@@ -68,5 +67,23 @@ public class RegisterAccountActivity extends Activity
 				}
 			}
 		});
+		
+		email.setOnFocusChangeListener(new OnFocusChangeListener()
+		{
+			public void onFocusChange(View v, boolean hasFocus) 
+			{
+				if(!hasFocus && !isValidEmail(email.getText().toString()))
+				{
+					Toast.makeText(getApplicationContext(),"Enter a valid email, please.",Toast.LENGTH_SHORT).show();
+				}
+			}
+		});
+	}
+
+	private boolean isValidEmail(String email)
+	{
+		Pattern pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE);
+		Matcher matcher = pattern.matcher(email);
+		return matcher.matches();
 	}
 }

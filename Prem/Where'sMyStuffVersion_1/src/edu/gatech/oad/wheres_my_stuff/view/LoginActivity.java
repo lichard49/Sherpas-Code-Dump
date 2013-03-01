@@ -1,11 +1,5 @@
 package edu.gatech.oad.wheres_my_stuff.view;
 
-import edu.gatech.oad.wheres_my_stuff.R;
-import edu.gatech.oad.wheres_my_stuff.R.id;
-import edu.gatech.oad.wheres_my_stuff.R.layout;
-import edu.gatech.oad.wheres_my_stuff.model.Database;
-import edu.gatech.oad.wheres_my_stuff.model.Person;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,13 +8,19 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
+import edu.gatech.oad.wheres_my_stuff.R;
+import edu.gatech.oad.wheres_my_stuff.model.Database;
+import edu.gatech.oad.wheres_my_stuff.model.Person;
 
-public class LoginActivity extends Activity {
-	
+public class LoginActivity extends Activity 
+{
+	private int failedLoginCount = 0;
+	private boolean locked = false;
 
-		/** Called when the activity is first created. */
+	/** Called when the activity is first created. */
 	@Override
-	public void onCreate(Bundle savedInstanceState) {
+	public void onCreate(Bundle savedInstanceState) 
+	{
 		Log.d("YourTag", "YourOutput");
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.another_file);
@@ -28,12 +28,11 @@ public class LoginActivity extends Activity {
 		/* Set OnClickListner to the login button */
 		ImageButton login = (ImageButton) findViewById(R.id.Login_Button);
 
-		//final EditText firstName = (EditText) findViewById(R.id.first_name);
-		//final EditText lastName = (EditText) findViewById(R.id.last_name);
 		final EditText loginName = (EditText) findViewById(R.id.username);
 		final EditText password = (EditText) findViewById(R.id.password);
 		
-		login.setOnClickListener(new View.OnClickListener() {
+		login.setOnClickListener(new View.OnClickListener() 
+		{
 
 			public void onClick(View v) {
 				Log.d("YourTag", "YourOutputa");
@@ -41,28 +40,39 @@ public class LoginActivity extends Activity {
 				
 				String email = loginName.getText().toString();		
 				String pw = password.getText().toString();
-				//String first = firstName.getText().toString();
-				//String last = lastName.getText().toString();
 				
 				Log.e("Login", email);
 				Log.e("Password", pw);
 				
-				if(validUser(new Person("", "", email, pw)))
+				if(locked)
 				{
-					Log.d("YourTag", "YourOutputab");
-					
-					Database.loggedIn = new Person("", "", email, pw);
-					
-					/* create Intent and set LoginSuccess Activity */
-					Intent intent = new Intent(getApplicationContext(),	LoginSuccessActivity.class);
-					Toast.makeText(getApplicationContext(),"Credentials Correct",Toast.LENGTH_LONG).show();
-					/* Start LoginSuccess Activity */
-					startActivity(intent);
-					finish();
+					Toast.makeText(getApplicationContext(),"Your account has been locked, " +
+							"please contact the administrator",Toast.LENGTH_SHORT).show();
 				}
-				else 
-					Toast.makeText(getApplicationContext(),"Credentials Incorrect",Toast.LENGTH_LONG).show();
-				
+				else
+				{
+					if(validUser(new Person("", "", email, pw)))
+					
+					{
+						
+						Log.d("YourTag", "YourOutputab");
+						
+						Database.loggedIn = new Person("", "", email, pw);
+						
+						/* create Intent and set LoginSuccess Activity */
+						Intent intent = new Intent(getApplicationContext(),	LoginSuccessActivity.class);
+						Toast.makeText(getApplicationContext(),"Credentials Correct",Toast.LENGTH_SHORT).show();
+						/* Start LoginSuccess Activity */
+						startActivity(intent);
+						finish();
+					}
+					else
+					{
+						failedLoginCount++;
+						if(failedLoginCount > 2) locked = true;
+						Toast.makeText(getApplicationContext(),"Credentials Incorrect " + failedLoginCount,Toast.LENGTH_SHORT).show();
+					}
+				}	
 			}
 			
 		});
