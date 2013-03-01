@@ -4,12 +4,44 @@
     android:layout_height="match_parent"
     android:onClick="true" >
 
-    <Spinner
-        android:id="@+id/spinner1"
+    <ImageView
+        android:id="@+id/map_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/map" />
+
+    <ImageView
+        android:id="@+id/search_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="25dp" />
+        android:src="@drawable/search_icon" />
+
+    <EditText
+        android:id="@+id/search_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/search_icon"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@+id/search_icon"
+        android:ems="10" >
+
+        <requestFocus />
+    </EditText>
+
+    <ListView
+        android:id="@+id/search_list_items"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/map_view"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/search_icon"
+        android:background="@color/Blue" >
+
+    </ListView>
 
 </RelativeLayout>

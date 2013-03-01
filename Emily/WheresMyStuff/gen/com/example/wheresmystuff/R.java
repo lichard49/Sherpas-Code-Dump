@@ -30,9 +30,11 @@ public final class R {
         public static final int logo=0x7f020007;
         public static final int mail=0x7f020008;
         public static final int mail_icon=0x7f020009;
-        public static final int search=0x7f02000a;
-        public static final int signup=0x7f02000b;
-        public static final int submit_button=0x7f02000c;
+        public static final int map=0x7f02000a;
+        public static final int search=0x7f02000b;
+        public static final int search_icon=0x7f02000c;
+        public static final int signup=0x7f02000d;
+        public static final int submit_button=0x7f02000e;
     }
     public static final class id {
         public static final int RelativeLayout=0x7f09002d;
@@ -67,7 +69,8 @@ public final class R {
         public static final int login_button=0x7f09002b;
         public static final int lost_radio=0x7f090024;
         public static final int mail_button=0x7f090030;
-        public static final int menu_settings=0x7f090033;
+        public static final int map_view=0x7f090032;
+        public static final int menu_settings=0x7f090036;
         public static final int misc_radio=0x7f090022;
         public static final int mobile_checkbox=0x7f090018;
         public static final int name_text_field=0x7f09001a;
@@ -77,8 +80,10 @@ public final class R {
         public static final int radioGroup2=0x7f090023;
         public static final int reward_text_field=0x7f09001d;
         public static final int search_button=0x7f090031;
+        public static final int search_icon=0x7f090033;
+        public static final int search_list_items=0x7f090035;
+        public static final int search_text=0x7f090034;
         public static final int signup_button=0x7f09002c;
-        public static final int spinner1=0x7f090032;
         public static final int textView1=0x7f090003;
         public static final int textView2=0x7f090005;
         public static final int textView3=0x7f090006;
