@@ -18,6 +18,8 @@ backward-compatibility can go here.
     </style>
     <color name="Blue">#6dd3fb</color>
     <style name="Blue">#6dd3fb</style>
+     <color name="Black">#000000</color>
+    <color name="White">#FFFFFF</color>
 
     <style name="registration_textbox">
 		<item name="android:layout_width">0dp</item>

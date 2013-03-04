@@ -14,12 +14,12 @@ public class Database {
 	       Person temp=new Person("a","t","t.com", "t");
 	        map.put(temp.getEmail(),temp);
 	}
-	public static  Map<String, Person> itemMap;
+	public static  Map<String, Item> itemMap;
 	static {
-	    itemMap = new HashMap<String, Person>();
+	    itemMap = new HashMap<String, Item>();
 	     
-	       Person temp=new Person("a","t","t.com", "t");
-	        itemMap.put(temp.getEmail(),temp);
+	       Item temp=new Item("sandwich","t.com","favorite meal",null);
+	        itemMap.put(temp.getName(),temp);
 	}
 	public static Person loggedIn;
 }
