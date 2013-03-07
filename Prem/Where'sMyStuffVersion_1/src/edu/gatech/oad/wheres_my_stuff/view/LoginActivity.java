@@ -12,6 +12,12 @@ import edu.gatech.oad.wheres_my_stuff.R;
 import edu.gatech.oad.wheres_my_stuff.model.Database;
 import edu.gatech.oad.wheres_my_stuff.model.Person;
 
+/**
+ * 
+ * 
+ * @author Richard
+ *
+ */
 public class LoginActivity extends Activity 
 {
 	private int failedLoginCount = 0;
@@ -21,9 +27,8 @@ public class LoginActivity extends Activity
 	@Override
 	public void onCreate(Bundle savedInstanceState) 
 	{
-		Log.d("YourTag", "YourOutput");
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.another_file);
+		setContentView(R.layout.login_layout);
 
 		/* Set OnClickListner to the login button */
 		ImageButton login = (ImageButton) findViewById(R.id.Login_Button);
@@ -35,7 +40,6 @@ public class LoginActivity extends Activity
 		{
 
 			public void onClick(View v) {
-				Log.d("YourTag", "YourOutputa");
 				/* Get user Name */
 				
 				String email = loginName.getText().toString();		
@@ -52,12 +56,10 @@ public class LoginActivity extends Activity
 				else
 				{
 					if(validUser(new Person("", "", email, pw)))
-					
 					{
-						
-						Log.d("YourTag", "YourOutputab");
-						
-						Database.loggedIn = new Person("", "", email, pw);
+						Person dummy = new Person("", "", email, pw);
+						Person dummyWithDetails = Database.map.get(dummy.getEmail());
+						Person.setLoggedInUser(dummyWithDetails, getApplicationContext());
 						
 						/* create Intent and set LoginSuccess Activity */
 						Intent intent = new Intent(getApplicationContext(),	LoginSuccessActivity.class);
@@ -69,41 +71,30 @@ public class LoginActivity extends Activity
 					else
 					{
 						failedLoginCount++;
-						if(failedLoginCount > 2) locked = true;
-						Toast.makeText(getApplicationContext(),"Credentials Incorrect " + failedLoginCount,Toast.LENGTH_SHORT).show();
+						if(failedLoginCount > 1) locked = true;
+						Toast.makeText(getApplicationContext(),"Credentials Incorrect #" + failedLoginCount,Toast.LENGTH_SHORT).show();
 					}
-				}	
+				}
 			}
 			
 		});
-		
 
-			ImageButton register = (ImageButton) findViewById(R.id.signup_button);
+		ImageButton register = (ImageButton) findViewById(R.id.signup_button);
+		register.setOnClickListener(new View.OnClickListener() {
 
-			register.setOnClickListener(new View.OnClickListener() {
-
-				public void onClick(View v) {
-					Intent intent = new Intent(getApplicationContext(),	RegisterAccountActivity.class);
-					/* Start LoginSuccess Activity */
-					startActivity(intent);
-					
-					Log.e("Register", "clicked");
-					
-				}
-			});
-			
+			public void onClick(View v) {
+				Intent intent = new Intent(getApplicationContext(),	RegisterAccountActivity.class);
+				/* Start LoginSuccess Activity */
+				startActivity(intent);
+				
+				Log.e("Register", "clicked");
+				
+			}
+		});
 	}
 	
 	private boolean validUser(Person p) 
 	{
-		// TODO Auto-generated method stub
-		//Log.e("Check",Database.map.get("at.com").getFirstName());
-		/*
-		boolean flag=Database.map.containsKey(name);
-		if(flag)
-			return password.equals(Database.map.get(name));
-			*/
 		return Database.map.containsKey(p.getEmail()) && p.getPassword().equals(Database.map.get(p.getEmail()).getPassword());
 	}
-	
 }

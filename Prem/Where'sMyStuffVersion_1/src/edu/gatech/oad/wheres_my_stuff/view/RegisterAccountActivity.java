@@ -45,7 +45,11 @@ public class RegisterAccountActivity extends Activity
 				String fn=firstName.getText().toString();
 				String ln=lastName.getText().toString();
 				
-				if(!(Database.map.containsKey(userName)))
+				if(userName.equals("") || pw.equals(""))
+				{
+					Toast.makeText(getApplicationContext(),"Please fill out the required fields",Toast.LENGTH_SHORT).show();
+				}
+				else if(!(Database.map.containsKey(userName)))
 				{
 						Log.e("UserName(Email)", userName);
 						Log.e("Password", pw);
@@ -59,11 +63,11 @@ public class RegisterAccountActivity extends Activity
 						Intent loginIntent = new Intent(getApplicationContext(),LoginActivity.class);
 						/* Start LoginSuccess Activity */
 						startActivity(loginIntent);
-						Toast.makeText(getApplicationContext(),"Thank you for Registering",Toast.LENGTH_LONG).show();
+						Toast.makeText(getApplicationContext(),"Thank you for Registering",Toast.LENGTH_SHORT).show();
 				}
 				else
 				{
-					Toast.makeText(getApplicationContext(),"That Username is taken. Sorry!",Toast.LENGTH_LONG).show();
+					Toast.makeText(getApplicationContext(),"That Username is taken. Sorry!",Toast.LENGTH_SHORT).show();
 				}
 			}
 		});

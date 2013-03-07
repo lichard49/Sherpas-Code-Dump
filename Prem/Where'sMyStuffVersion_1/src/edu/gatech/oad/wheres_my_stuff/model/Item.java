@@ -10,7 +10,8 @@ import android.graphics.Bitmap;
  * @author Prem
  *
  */
-public class Item {
+public class Item 
+{
 	
 	/** the item's itemName */
 	private String name;
@@ -26,14 +27,14 @@ public class Item {
 	/** the item's itemImage */
 	private Bitmap itemImage;
 	
-	
 	/**
 	 * Makes a new item
 	 * @param n the name
 	 * @param u the id
 	 * @param e the email
 	 */
-	public Item(String name, String personUserName, String description, Bitmap itemImage) {
+	public Item(String name, String personUserName, String description, Bitmap itemImage) 
+	{
 		this.name = name;
 		this.personUserName = personUserName;
 		this.description = description;

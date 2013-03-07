@@ -1,34 +1,45 @@
 package edu.gatech.oad.wheres_my_stuff.view;
 
-import edu.gatech.oad.wheres_my_stuff.R;
-import edu.gatech.oad.wheres_my_stuff.R.id;
-import edu.gatech.oad.wheres_my_stuff.R.layout;
-import edu.gatech.oad.wheres_my_stuff.model.Database;
-
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import edu.gatech.oad.wheres_my_stuff.R;
+import edu.gatech.oad.wheres_my_stuff.model.Person;
 
-public class LoginSuccessActivity extends Activity {
-
+public class LoginSuccessActivity extends Activity 
+{
+	private Intent toAddItemActivity;
+	private Intent toSearchActivity;
+	
 	public void onCreate(Bundle savedInstanceState) 
 	{
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.login_success);
+        setContentView(R.layout.home_layout);
+    
+        toAddItemActivity = new Intent(getApplicationContext(), AddItemActivity.class);
+        toSearchActivity = new Intent(getApplicationContext(), SearchActivity.class);
         
         final TextView greeting = (TextView) findViewById(R.id.greeting);
-        String name = Database.map.get(Database.loggedIn.getEmail()).getFirstName();
+        String name = Person.getLoggedInUser(getApplicationContext()).getFirstName(); //Database.loggedIn.getFirstName();
         greeting.setText("Welcome, " + name + "!");
         
-        ImageButton addItem = (ImageButton) findViewById(R.id.Login_Button);
-		addItem.setOnClickListener(new View.OnClickListener() 
+        ImageButton addItem = (ImageButton) findViewById(R.id.add_item_button);
+		addItem.setOnClickListener(new View.OnClickListener()
 		{
 			public void onClick(View v)
 			{
-				
+				startActivity(toAddItemActivity);
+			}
+		});
+		ImageButton searchItem = (ImageButton) findViewById(R.id.search_button);
+		searchItem.setOnClickListener(new View.OnClickListener()
+		{
+			public void onClick(View v)
+			{
+				startActivity(toSearchActivity);
 			}
 		});
 	}

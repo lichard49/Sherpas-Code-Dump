@@ -1,5 +1,8 @@
 package edu.gatech.oad.wheres_my_stuff.model;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+
 
 /**
  * Represents a single Person in the model
@@ -39,22 +42,34 @@ public class Person {
 	 * @return the persons name
 	 */
 	public String getFirstName() { return firstName; }
-	/**
-	 * 
-	 * @return the persons name
-	 */
 	public String getLastName() { return lastName; }
-	/**
-	 * 
-	 * @return the persons id
-	 */
-	/*public String getUid() { return uid; }
-	*//**
-	 * 
-	 * @return the persons email
-	 */
-	
 	public String getEmail() { return email; }
-
 	public String getPassword() { return password; }
+	
+	private static final String LOGGED_IN_USER = "LoggedInUser";
+	private static final String FIRST_NAME = "FirstName";
+	private static final String LAST_NAME = "LastName";
+	private static final String EMAIL = "Email";
+	private static final String PASSWORD = "Password";
+	public static void setLoggedInUser(Person p, Context c)
+	{
+		SharedPreferences attributes = c.getSharedPreferences(
+				LOGGED_IN_USER, Context.MODE_PRIVATE);
+		SharedPreferences.Editor editor = attributes.edit();
+		editor.putString(FIRST_NAME, p.getFirstName());
+		editor.putString(LAST_NAME, p.getLastName());
+		editor.putString(EMAIL, p.getEmail());
+		editor.putString(PASSWORD, p.getPassword());
+		editor.commit();
+	}
+	
+	public static Person getLoggedInUser(Context c)
+	{
+		SharedPreferences attributes = c.getSharedPreferences(
+				LOGGED_IN_USER, Context.MODE_PRIVATE);
+		return new Person(attributes.getString(FIRST_NAME, ""),
+				attributes.getString(LAST_NAME, ""),
+				attributes.getString(EMAIL, ""),
+				attributes.getString(PASSWORD, ""));
+	}
 }
