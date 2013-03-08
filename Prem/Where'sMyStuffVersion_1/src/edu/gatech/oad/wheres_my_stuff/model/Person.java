@@ -23,6 +23,7 @@ public class Person {
 	private String email;
 	
 	private String password;
+	private boolean isAdmin;
 	
 	/**
 	 * Makes a new person
@@ -30,11 +31,12 @@ public class Person {
 	 * @param u the id
 	 * @param e the email
 	 */
-	public Person(String fn, String ln, String e, String pw) {
+	public Person(String fn, String ln, String e, String pw, boolean ia) {
 		firstName = fn;
 		lastName = ln;
 		email = e;
 		password = pw;
+		isAdmin = ia;
 	}
 	
 	/**
@@ -45,6 +47,7 @@ public class Person {
 	public String getLastName() { return lastName; }
 	public String getEmail() { return email; }
 	public String getPassword() { return password; }
+	public boolean isAdmin() { return isAdmin; }
 	
 	private static final String LOGGED_IN_USER = "LoggedInUser";
 	private static final String FIRST_NAME = "FirstName";
