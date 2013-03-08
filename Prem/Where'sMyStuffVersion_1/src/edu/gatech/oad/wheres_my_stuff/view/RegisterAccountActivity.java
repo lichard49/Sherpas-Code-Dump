@@ -49,11 +49,11 @@ public class RegisterAccountActivity extends Activity
 				{
 					Toast.makeText(getApplicationContext(),"Please fill out the required fields",Toast.LENGTH_SHORT).show();
 				}
-				else if(!(Database.map.containsKey(userName)))
+				else if(Database.getPerson(userName) != null)
 				{
 						Log.e("UserName(Email)", userName);
 						Log.e("Password", pw);
-						Database.map.put(userName, new Person(fn,ln,userName, pw));
+						Database.addPerson(new Person(fn,ln,userName, pw, false));
 						
 						Intent intent = new Intent(getApplicationContext(),	RegisterAccountActivity.class);
 						/* Start LoginSuccess Activity */

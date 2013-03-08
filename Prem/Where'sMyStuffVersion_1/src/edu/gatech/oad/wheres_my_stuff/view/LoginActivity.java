@@ -55,10 +55,10 @@ public class LoginActivity extends Activity
 				}
 				else
 				{
-					if(validUser(new Person("", "", email, pw)))
+					if(validUser(new Person("", "", email, pw, false)))
 					{
-						Person dummy = new Person("", "", email, pw);
-						Person dummyWithDetails = Database.map.get(dummy.getEmail());
+						Person dummy = new Person("", "", email, pw, false);
+						Person dummyWithDetails = Database.getPerson(dummy.getEmail());
 						Person.setLoggedInUser(dummyWithDetails, getApplicationContext());
 						
 						/* create Intent and set LoginSuccess Activity */
@@ -95,6 +95,6 @@ public class LoginActivity extends Activity
 	
 	private boolean validUser(Person p) 
 	{
-		return Database.map.containsKey(p.getEmail()) && p.getPassword().equals(Database.map.get(p.getEmail()).getPassword());
+		return Database.getPerson(p.getEmail())!=null && p.getPassword().equals(Database.getPerson(p.getEmail()).getPassword());
 	}
 }

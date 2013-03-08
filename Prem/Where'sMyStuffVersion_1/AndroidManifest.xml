@@ -54,5 +54,12 @@
             
         </activity>
         
+        <activity
+            android:label="AdminActivity"
+            android:name="edu.gatech.oad.wheres_my_stuff.view.AdminActivity"
+            android:theme="@android:style/Theme.Black.NoTitleBar" >
+            
+        </activity>
+        
     </application>
 </manifest>

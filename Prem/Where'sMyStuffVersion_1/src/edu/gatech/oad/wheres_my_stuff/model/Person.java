@@ -75,7 +75,7 @@ public class Person {
 		return new Person(attributes.getString(FIRST_NAME, ""),
 				attributes.getString(LAST_NAME, ""),
 				attributes.getString(EMAIL, ""),
-				attributes.getString(PASSWORD, "")
-				attributes.getBoolean(ADMIN, false);
+				attributes.getString(PASSWORD, ""),
+				attributes.getBoolean(ADMIN, false));
 	}
 }

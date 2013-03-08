@@ -1,5 +1,6 @@
 package edu.gatech.oad.wheres_my_stuff.model;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -13,13 +14,40 @@ import java.util.Map;
 
 public class Database 
 {
-	public static  Map<String, Person> map;
+	private static Map<String, Person> peopleMap;
 	static 
 	{
-	    map = new HashMap<String, Person>();
+	    peopleMap = new HashMap<String, Person>();
 	     
-	    Person temp=new Person("a","t","t.com", "t");
-        map.put(temp.getEmail(),temp);
+	    Person temp=new Person("a","t","t.com", "t", false);
+        peopleMap.put(temp.getEmail(),temp);
+        
+        Person admin = new Person("admin", "admin", "admin", "admin", true);
+        peopleMap.put(admin.getEmail(),admin);
+	}
+	public static String[] getListNames()
+	{
+		Collection<Person> c = Database.peopleMap.values();
+		Person[] people = new Person[c.size()];
+		c.toArray(people);
+		String[] names = new String[c.size()];
+		for(int x = 0; x < c.size(); x++)
+		{
+			names[x] = people[x].getFirstName();
+		}
+		return names;
+	}
+	public static Person getPerson(String email)
+	{
+		return peopleMap.get(email);
+	}
+	public static void addPerson(Person p)
+	{
+		peopleMap.put(p.getEmail(), p);
+	}
+	public static void removePerson(String email)
+	{
+		peopleMap.remove(email);
 	}
 	
 	private static Map<String, MyItem> itemMap;

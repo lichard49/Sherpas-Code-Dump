@@ -25,6 +25,16 @@
         android:text="Welcome, "
         android:textAppearance="?android:attr/textAppearanceMedium" />
     
+    <Button
+        android:id="@+id/admin_panel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/greeting"
+        android:layout_alignParentRight="true"
+        android:visibility="gone"
+        android:text="Admin stuff" />
+    
+    
     <TableLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
@@ -82,6 +92,5 @@
                 android:src="@drawable/search" />
 
         </TableRow>
-    </TableLayout>
-	 
+    </TableLayout>	 
  </RelativeLayout>
