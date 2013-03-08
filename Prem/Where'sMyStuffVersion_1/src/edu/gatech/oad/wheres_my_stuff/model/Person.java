@@ -54,6 +54,7 @@ public class Person {
 	private static final String LAST_NAME = "LastName";
 	private static final String EMAIL = "Email";
 	private static final String PASSWORD = "Password";
+	private static final String ADMIN = "Admin";
 	public static void setLoggedInUser(Person p, Context c)
 	{
 		SharedPreferences attributes = c.getSharedPreferences(
@@ -63,6 +64,7 @@ public class Person {
 		editor.putString(LAST_NAME, p.getLastName());
 		editor.putString(EMAIL, p.getEmail());
 		editor.putString(PASSWORD, p.getPassword());
+		editor.putBoolean(ADMIN, p.isAdmin());
 		editor.commit();
 	}
 	
@@ -73,6 +75,7 @@ public class Person {
 		return new Person(attributes.getString(FIRST_NAME, ""),
 				attributes.getString(LAST_NAME, ""),
 				attributes.getString(EMAIL, ""),
-				attributes.getString(PASSWORD, ""));
+				attributes.getString(PASSWORD, "")
+				attributes.getBoolean(ADMIN, false);
 	}
 }
