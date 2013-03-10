@@ -41,7 +41,7 @@ public class Person {
 		this.id = id;
 	}
 	
-	public Person(String fn, String ln, String e, String phone, long id)
+	public Person(String fn, String ln, String e, long id)
 	{
 		this(fn, ln, e);
 		this.id = id;

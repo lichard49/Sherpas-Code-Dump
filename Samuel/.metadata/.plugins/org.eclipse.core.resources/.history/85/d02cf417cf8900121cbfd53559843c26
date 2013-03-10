@@ -20,7 +20,6 @@ public class Person {
 	private String email;
 	
 	private String password;
-	private String phone;
 	
 	public Person(String fn, String ln, String e)
 	{
@@ -29,19 +28,18 @@ public class Person {
 		email = e;
 	}
 	
-	public Person(String fn, String ln, String e, String pw, String phone) {
+	public Person(String fn, String ln, String e, String pw) {
 		this(fn, ln, e);
 		password = pw;
-		this.phone = phone;
 	}
 	
-	public Person(String fn, String ln, String e, String pw, String phone, long id)
+	public Person(String fn, String ln, String e, String pw, long id)
 	{
-		this(fn, ln, e, pw, phone);
+		this(fn, ln, e, pw);
 		this.id = id;
 	}
 	
-	public Person(String fn, String ln, String e, String phone, long id)
+	public Person(String fn, String ln, String e, long id)
 	{
 		this(fn, ln, e);
 		this.id = id;

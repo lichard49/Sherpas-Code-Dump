@@ -31,7 +31,7 @@ public class MyItem implements Serializable
 	public Person getOwner()
 	{
 		Database d = Database.getInstance();
-		return d.getPerson(ownerID);
+		return d.getOwner(ownerID);
 	}
 	
 	public String getAttribute(Attribute attribute)

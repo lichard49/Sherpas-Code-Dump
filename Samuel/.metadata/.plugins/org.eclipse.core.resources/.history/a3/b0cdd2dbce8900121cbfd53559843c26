@@ -107,7 +107,7 @@ public class Database {
 				if(success==1)
 				{
 					long id = jObject.getLong("ID");
-					loggedIn = new Person(firstName, lastName, email, phone, id);
+					loggedIn = new Person(firstName, lastName, email, id);
 					return loggedIn;
 				}
 			} catch (JSONException e) {
@@ -122,27 +122,7 @@ public class Database {
 	
 	public Person getPerson(long ID)
 	{
-		String file = "getPersonByID.php";
-		ArrayList<NameValuePair> params = new ArrayList<NameValuePair>();
-		params.add(new BasicNameValuePair("ID", ID+""));
-		JSONArray result = makeHttpRequest(host+file, "GET", params);
-		if(result.length()!=0)
-		{
-			try {
-				JSONObject jObject = result.getJSONObject(0);
-				String firstName = jObject.getString("FirstName");
-				String lastName = jObject.getString("LastName");
-				String uEmail = jObject.getString("Email");
-				String phone = jObject.getString("Phone");
-				long id = jObject.getLong("ID");
-				loggedIn = new Person(firstName, lastName, uEmail, phone, id);
-				return loggedIn;
-			} catch (JSONException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-		return null;
+		
 	}
 	
 	public JSONArray makeHttpRequest(String url, String method, List<NameValuePair> params)

@@ -107,7 +107,7 @@ public class Database {
 				if(success==1)
 				{
 					long id = jObject.getLong("ID");
-					loggedIn = new Person(firstName, lastName, email, phone, id);
+					loggedIn = new Person(firstName, lastName, email, id);
 					return loggedIn;
 				}
 			} catch (JSONException e) {
@@ -135,7 +135,7 @@ public class Database {
 				String uEmail = jObject.getString("Email");
 				String phone = jObject.getString("Phone");
 				long id = jObject.getLong("ID");
-				loggedIn = new Person(firstName, lastName, uEmail, phone, id);
+				loggedIn = new Person(firstName, lastName, uEmail, id);
 				return loggedIn;
 			} catch (JSONException e) {
 				// TODO Auto-generated catch block
