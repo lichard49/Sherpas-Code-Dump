@@ -89,10 +89,36 @@ public class Database {
 		return null;
 	}
 	
-	public Person createUser()
+	public Person createUser(String firstName, String lastName, String email, String phone, String password)
 	{
+		String file = "authenticate.php";
+		ArrayList<NameValuePair> params = new ArrayList<NameValuePair>();
+		params.add(new BasicNameValuePair("firstName", firstName));
+		params.add(new BasicNameValuePair("lastName", lastName));
+		params.add(new BasicNameValuePair("email", email));
+		params.add(new BasicNameValuePair("phone", phone));
+		params.add(new BasicNameValuePair("password", password));
+		JSONArray result = makeHttpRequest(host+file, "POST", params);
+		if(result!=null && result.length()!=0)
+		{
+			try {
+				JSONObject jObject = result.getJSONObject(0);
+				int success = jObject.getInt("success");
+				if(success==1)
+				{
+					long id = jObject.getLong("ID");
+					loggedIn = new Person(firstName, lastName, email, id);
+					return loggedIn;
+				}
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 		return null;
 	}
+	
+	public MyItem createItem()
 	
 	public JSONArray makeHttpRequest(String url, String method, List<NameValuePair> params)
 	{ 

@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/db_connect.php';
+require_once('D:\Hosting\6939230\html\sherpas\db_connect.php');
 $db = new DB_CONNECT();
 
 $email = $_GET['email'];
