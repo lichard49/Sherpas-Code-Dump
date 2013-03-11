@@ -266,46 +266,6 @@ public class Database {
 		return null;
 	}
 	
-	public boolean deleteUser(long ID)
-	{
-		String file = "deleteUserByID.php";
-		ArrayList<NameValuePair> params = new ArrayList<NameValuePair>();
-		params.add(new BasicNameValuePair("ID", ID+""));
-		JSONArray result = makeHttpRequest(host+file, "POST", params);
-		if(result!=null && result.length()!=0)
-		{
-			try {
-				JSONObject jObject = result.getJSONObject(0);
-				int success = jObject.getInt("success");
-				return success==1;
-			} catch (JSONException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-		return false;
-	}
-	
-	public boolean deleteUser(String email)
-	{
-		String file = "deleteUserByEmail.php";
-		ArrayList<NameValuePair> params = new ArrayList<NameValuePair>();
-		params.add(new BasicNameValuePair("email", email));
-		JSONArray result = makeHttpRequest(host+file, "POST", params);
-		if(result!=null && result.length()!=0)
-		{
-			try {
-				JSONObject jObject = result.getJSONObject(0);
-				int success = jObject.getInt("success");
-				return success==1;
-			} catch (JSONException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-		return false;
-	}
-	
 //	public JSONArray makeHttpRequest(String url, String method, List<NameValuePair> params)
 //	{ 
 //		InputStream is = null;
