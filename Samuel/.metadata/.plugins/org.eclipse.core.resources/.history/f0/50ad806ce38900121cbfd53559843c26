@@ -69,14 +69,14 @@ public class Database {
 		return false;
 	}
 	
-	public boolean emailLocked(String email)
+	public boolean isLocked(String email)
 	{
-		String file = "emailLocked.php";
+		String file = "emailExists.php";
 		ArrayList<NameValuePair> params = new ArrayList<NameValuePair>();
 		params.add(new BasicNameValuePair("email", email));
 		JSONArray result = makeHttpRequest(host+file, "GET", params);
 		try {
-			return result.getJSONObject(0).getInt("locked") == 1;
+			return result.getJSONObject(0).getInt("exist") == 1;
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
