@@ -229,7 +229,6 @@ public class Database {
 					long id = jObject.getLong("ID");
 					lockedList.add(new Person(firstName, lastName, uEmail, phone, id));
 				}
-				return lockedList;
 			} catch (JSONException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

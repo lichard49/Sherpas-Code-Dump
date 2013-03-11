@@ -227,9 +227,8 @@ public class Database {
 					String uEmail = jObject.getString("Email");
 					String phone = jObject.getString("Phone");
 					long id = jObject.getLong("ID");
-					lockedList.add(new Person(firstName, lastName, uEmail, phone, id));
-				}
-				return lockedList;
+					loggedIn = new Person(firstName, lastName, uEmail, phone, id);
+					return loggedIn;
 			} catch (JSONException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

@@ -213,7 +213,7 @@ public class Database {
 	public List<Person> getLocked()
 	{
 		String file = "getLocked.php";
-		ArrayList<Person> lockedList = new ArrayList<Person>();
+		ArrayList<Person> result = new ArrayList<Person>();
 		ArrayList<NameValuePair> params = new ArrayList<NameValuePair>();
 		JSONArray result = makeHttpRequest(host+file, "GET", params);
 		if(result!=null&&result.length()!=0)
@@ -227,9 +227,8 @@ public class Database {
 					String uEmail = jObject.getString("Email");
 					String phone = jObject.getString("Phone");
 					long id = jObject.getLong("ID");
-					lockedList.add(new Person(firstName, lastName, uEmail, phone, id));
-				}
-				return lockedList;
+					loggedIn = new Person(firstName, lastName, uEmail, phone, id);
+					return loggedIn;
 			} catch (JSONException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
