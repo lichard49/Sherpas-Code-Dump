@@ -12,7 +12,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="22dp"
         android:text="Admin"
-        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textAppearance="?android:attr/textAppearanceSmall"
         android:textColor="@color/Blue"
         android:textSize="34sp"
         android:textStyle="bold"
@@ -22,21 +22,37 @@
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
         android:layout_below="@+id/title"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="37dp"
+        android:layout_marginTop="34dp"
+        android:layout_toLeftOf="@+id/title"
         android:text="Username"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <ImageButton
-        android:id="@+id/imageButton1"
+        android:id="@+id/unlock_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/textView1"
-        android:layout_marginLeft="14dp"
-        android:layout_toRightOf="@+id/title"
+        android:layout_alignTop="@+id/delete_button"
+        android:layout_toRightOf="@+id/delete_button"
+        android:background="@color/Black"
+        android:src="@drawable/delete" />
+
+    <ImageButton
+        android:id="@+id/delete_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView1"
+        android:layout_alignLeft="@+id/title"
         android:background="@color/Black"
         android:src="@drawable/unlock_pressed" />
+
+    <ImageButton
+        android:id="@+id/make_adminbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/unlock_button"
+        android:layout_alignParentRight="true"
+        android:background="@color/Black"
+        android:src="@drawable/makeadmin" />
 
 </RelativeLayout>
