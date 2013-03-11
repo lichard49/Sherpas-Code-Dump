@@ -85,7 +85,9 @@ public class Database {
 				String uEmail = jObject.getString("Email");
 				String phone = jObject.getString("Phone");
 				long id = jObject.getLong("ID");
-				loggedIn = new Person(firstName, lastName, uEmail, phone, id);
+				boolean locked = (jObject.getInt("Locked")==1);
+				boolean isAdmin = (jObject.getInt("IsAdmin")==1);
+				loggedIn = new Person(firstName, lastName, uEmail, phone, id, locked, isAdmin);
 				return loggedIn;
 			} catch (JSONException e) {
 				// TODO Auto-generated catch block
@@ -95,7 +97,7 @@ public class Database {
 		return null;
 	}
 	
-	public Person createUser(String firstName, String lastName, String email, String phone, String password)
+	public Person createUser(String firstName, String lastName, String email, String phone, String password, boolean isAdmin)
 	{
 		String file = "createUser.php";
 		ArrayList<NameValuePair> params = new ArrayList<NameValuePair>();
@@ -104,6 +106,7 @@ public class Database {
 		params.add(new BasicNameValuePair("email", email));
 		params.add(new BasicNameValuePair("phone", phone));
 		params.add(new BasicNameValuePair("password", password));
+		params.add(new BasicNameValuePair("isAdmin", (isAdmin?"1":"0")));
 		JSONArray result = makeHttpRequest(host+file, "POST", params);
 		if(result!=null && result.length()!=0)
 		{
@@ -122,6 +125,48 @@ public class Database {
 			}
 		}
 		return null;
+	}
+	
+	public boolean setAdmin(String email, boolean isAdmin)
+	{
+		String file = "updateAdmin.php";
+		ArrayList<NameValuePair> params = new ArrayList<NameValuePair>();
+		params.add(new BasicNameValuePair("email", email));
+		params.add(new BasicNameValuePair("isAdmin", (isAdmin?"1":"0")));
+		JSONArray result = makeHttpRequest(host+file, "POST", params);
+		if(result!=null && result.length()!=0)
+		{
+			try {
+				JSONObject jObject = result.getJSONObject(0);
+				int success = jObject.getInt("success");
+				return success==1;
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return false;
+	}
+	
+	public boolean setLocked(String email, boolean isLocked)
+	{
+		String file = "updateLock.php";
+		ArrayList<NameValuePair> params = new ArrayList<NameValuePair>();
+		params.add(new BasicNameValuePair("email", email));
+		params.add(new BasicNameValuePair("locked", (isLocked?"1":"0")));
+		JSONArray result = makeHttpRequest(host+file, "POST", params);
+		if(result!=null && result.length()!=0)
+		{
+			try {
+				JSONObject jObject = result.getJSONObject(0);
+				int success = jObject.getInt("success");
+				return success==1;
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return false;
 	}
 	
 	//public MyItem createItem()

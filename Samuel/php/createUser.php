@@ -7,8 +7,9 @@ $lastName = $_POST['lastName'];
 $email = $_POST['email'];
 $phone = $_POST['phone'];
 $password = $_POST['password'];
+$admin = $_POST['isAdmin'];
 
-$result=mysql_query("INSERT INTO Person(FirstName, LastName, Email, Phone, Password) VALUES ('$firstName', '$lastName','$email', $phone, '$password');");
+$result=mysql_query("INSERT INTO Person(FirstName, LastName, Email, Phone, Password, IsAdmin) VALUES ('$firstName', '$lastName','$email', $phone, '$password', '$admin');");
 if($result)
 {
 	$row=mysql_query("SELECT ID FROM Person WHERE Email = '$email';");
