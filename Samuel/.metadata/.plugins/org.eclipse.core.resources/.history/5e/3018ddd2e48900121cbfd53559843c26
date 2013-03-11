@@ -238,34 +238,6 @@ public class Database {
 		return null;
 	}
 	
-	public List<Person> getAllUsers()
-	{
-		String file = "getAllUsers.php";
-		ArrayList<Person> lockedList = new ArrayList<Person>();
-		ArrayList<NameValuePair> params = new ArrayList<NameValuePair>();
-		JSONArray result = makeHttpRequest(host+file, "GET", params);
-		if(result!=null&&result.length()!=0)
-		{
-			try {
-				for(int i = 0; i<result.length(); i++)
-				{
-					JSONObject jObject = result.getJSONObject(i);
-					String firstName = jObject.getString("FirstName");
-					String lastName = jObject.getString("LastName");
-					String uEmail = jObject.getString("Email");
-					String phone = jObject.getString("Phone");
-					long id = jObject.getLong("ID");
-					lockedList.add(new Person(firstName, lastName, uEmail, phone, id));
-				}
-				return lockedList;
-			} catch (JSONException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-		return null;
-	}
-	
 //	public JSONArray makeHttpRequest(String url, String method, List<NameValuePair> params)
 //	{ 
 //		InputStream is = null;
