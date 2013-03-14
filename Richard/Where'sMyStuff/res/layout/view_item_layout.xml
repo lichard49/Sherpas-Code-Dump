@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Black" >
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/add_icon" />
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/imageView1"
+        android:id="@+id/detail_scroll">
+    
+	    <TableLayout
+	        android:id="@+id/item_settings_table"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginBottom="10dp"
+	        android:layout_marginLeft="5dp"
+	        android:layout_marginRight="5dp" >
+	
+	        <TableRow
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginBottom="5dp" >
+	            
+	            <TextView
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_marginRight="5dp"
+			        android:text="Type:"
+			        android:textAppearance="?android:attr/textAppearanceSmall"
+			        android:textColor="@color/White" />
+	            
+	            <TextView
+			        android:id="@+id/type_text"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:textColor="@color/White" />
+	            
+	        </TableRow>
+	
+	        <TableRow
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginBottom="5dp" >
+	            
+	            <TextView
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_marginRight="5dp"
+			        android:text="Name:"
+			        android:textAppearance="?android:attr/textAppearanceSmall" 
+			        android:textColor="@color/White"/>
+	            
+	            <TextView
+			        android:id="@+id/name_text"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:textColor="@color/White" />
+	            
+	        </TableRow>
+	
+	        <TableRow
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginBottom="5dp" >
+	            
+	            <TextView
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_marginRight="5dp"
+			        android:text="Description:"
+			        android:textAppearance="?android:attr/textAppearanceSmall"
+			        android:textColor="@color/White"/>
+	            
+	            <TextView
+			        android:id="@+id/description_text"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:textColor="@color/White" />
+	            
+	        </TableRow>
+	
+	        <TableRow
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginBottom="5dp" >
+	            
+	            <TextView
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_marginRight="5dp"
+			        android:text="Category:"
+			        android:textAppearance="?android:attr/textAppearanceSmall" 
+			        android:textColor="@color/White"/>
+	            
+	            <TextView
+			        android:id="@+id/category_text"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:textColor="@color/White" />
+	            
+	        </TableRow>
+	        
+	        <TableRow
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginBottom="5dp" >
+	            
+	            <TextView
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_marginRight="5dp"
+			        android:text="Location:"
+			        android:textAppearance="?android:attr/textAppearanceSmall"
+			        android:textColor="@color/White" />
+	            
+	            <TextView
+			        android:id="@+id/location_text"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:textColor="@color/White"/>
+	            
+	        </TableRow>
+	        
+	        <TableRow
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginBottom="5dp" >
+	            
+	            <TextView
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_marginRight="5dp"
+			        android:text="Reward:"
+			        android:textAppearance="?android:attr/textAppearanceSmall" 
+			        android:textColor="@color/White" />
+	            
+	            <TextView
+			        android:id="@+id/reward_text"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:textColor="@color/White" />
+	            
+	        </TableRow>
+	        
+	        <TableRow
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginBottom="5dp" >
+	            
+	            <TextView
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_marginRight="5dp"
+			        android:text="Date:"
+			        android:textAppearance="?android:attr/textAppearanceSmall" 
+			        android:textColor="@color/White" />
+	            
+	            <TextView
+			        android:id="@+id/date_text"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:textColor="@color/White" />
+	            
+	        </TableRow>
+	        
+	        <TableRow
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginBottom="5dp" >
+	            
+	            <ImageView
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:id="@+id/item_image" />
+	            
+	        </TableRow>
+	        
+	    </TableLayout>
+	
+	    
+	    
+    </ScrollView>
+    
+</RelativeLayout>
