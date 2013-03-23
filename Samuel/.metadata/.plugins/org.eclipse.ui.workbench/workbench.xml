@@ -41,6 +41,11 @@
 <part id="2"/>
 <part id="3"/>
 <part id="4"/>
+<part id="5"/>
+<part id="6"/>
+<part id="7"/>
+<part id="8"/>
+<part id="9"/>
 </presentation>
 </folder>
 </info>
@@ -48,7 +53,7 @@
 <editor id="com.springsource.sts.internal.ide.ui.editors.MultiPageDashboardEditor" name="Dashboard" partName="Dashboard" title="Dashboard" tooltip="Dashboard" workbook="DefaultEditorWorkbook">
 <input factoryID="com.springsource.sts.ide.ui.dashboard.elementFactory" openDashboard="true"/>
 </editor>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Database.java" partName="Database.java" path="C:/Users/admin/Programming/GitHub/Sherpas-Code-Dump/Samuel/Where&apos;sMyStuffVersion_1sam/src/edu/gatech/oad/wheres_my_stuff/model/Database.java" title="Database.java" tooltip="Where&apos;sMyStuffVersion_1sam/src/edu/gatech/oad/wheres_my_stuff/model/Database.java" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Database.java" partName="Database.java" path="C:/Users/admin/Programming/GitHub/Sherpas-Code-Dump/Samuel/Where&apos;sMyStuffVersion_1sam/src/edu/gatech/oad/wheres_my_stuff/model/Database.java" title="Database.java" tooltip="Where&apos;sMyStuffVersion_1sam/src/edu/gatech/oad/wheres_my_stuff/model/Database.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Where&apos;sMyStuffVersion_1sam/src/edu/gatech/oad/wheres_my_stuff/model/Database.java"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="8272" selectionTopPixel="3201"/>
 </editor>
@@ -63,6 +68,26 @@
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MyItem.java" partName="MyItem.java" path="C:/Users/admin/Programming/GitHub/Sherpas-Code-Dump/Samuel/Where&apos;sMyStuffVersion_1sam/src/edu/gatech/oad/wheres_my_stuff/model/MyItem.java" title="MyItem.java" tooltip="Where&apos;sMyStuffVersion_1sam/src/edu/gatech/oad/wheres_my_stuff/model/MyItem.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Where&apos;sMyStuffVersion_1sam/src/edu/gatech/oad/wheres_my_stuff/model/MyItem.java"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="302" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="package-info.java" partName="package-info.java" path="C:/Users/admin/Programming/GitHub/Sherpas-Code-Dump/Samuel/Where&apos;sMyStuff/src/edu/gatech/oad/wheres_my_stuff/view/package-info.java" title="package-info.java" tooltip="Where&apos;sMyStuff/src/edu/gatech/oad/wheres_my_stuff/view/package-info.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Where&apos;sMyStuff/src/edu/gatech/oad/wheres_my_stuff/view/package-info.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AddItemActivity.java" partName="AddItemActivity.java" path="C:/Users/admin/Programming/GitHub/Sherpas-Code-Dump/Samuel/Where&apos;sMyStuff/src/edu/gatech/oad/wheres_my_stuff/view/AddItemActivity.java" title="AddItemActivity.java" tooltip="Where&apos;sMyStuff/src/edu/gatech/oad/wheres_my_stuff/view/AddItemActivity.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Where&apos;sMyStuff/src/edu/gatech/oad/wheres_my_stuff/view/AddItemActivity.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Database.java" partName="Database.java" path="C:/Users/admin/Programming/GitHub/Sherpas-Code-Dump/Samuel/Where&apos;sMyStuff/src/edu/gatech/oad/wheres_my_stuff/model/Database.java" title="Database.java" tooltip="Where&apos;sMyStuff/src/edu/gatech/oad/wheres_my_stuff/model/Database.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Where&apos;sMyStuff/src/edu/gatech/oad/wheres_my_stuff/model/Database.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="8417" selectionTopPixel="3160"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Database2.java" partName="Database2.java" path="C:/Users/admin/Programming/GitHub/Sherpas-Code-Dump/Samuel/Where&apos;sMyStuff/src/edu/gatech/oad/wheres_my_stuff/model/Database2.java" title="Database2.java" tooltip="Where&apos;sMyStuff/src/edu/gatech/oad/wheres_my_stuff/model/Database2.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Where&apos;sMyStuff/src/edu/gatech/oad/wheres_my_stuff/model/Database2.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Person.java" partName="Person.java" path="C:/Users/admin/Programming/GitHub/Sherpas-Code-Dump/Samuel/Where&apos;sMyStuff/src/edu/gatech/oad/wheres_my_stuff/model/Person.java" title="Person.java" tooltip="Where&apos;sMyStuff/src/edu/gatech/oad/wheres_my_stuff/model/Person.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Where&apos;sMyStuff/src/edu/gatech/oad/wheres_my_stuff/model/Person.java"/>
+<editorState selectionHorizontalPixel="76" selectionLength="0" selectionOffset="0" selectionTopPixel="702"/>
 </editor>
 </editors>
 <views>
@@ -144,7 +169,7 @@
 <viewState CommonNavigator.LINKING_ENABLED="0"/>
 </view>
 </views>
-<perspectives activePart="org.eclipse.jdt.ui.CompilationUnitEditor" activePerspective="com.springsource.sts.ide.perspective">
+<perspectives activePart="org.eclipse.jdt.ui.PackageExplorer" activePerspective="com.springsource.sts.ide.perspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="com.springsource.sts.internal.ide.ui.perspective.StsPerspective" id="com.springsource.sts.ide.perspective" label="Spring"/>
 <alwaysOnActionSet id="com.springsource.sts.ide.help.actionSet"/>
@@ -328,34 +353,12 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Where&apos;sMyStuffVersion_1sam/src/edu/gatech/oad/wheres_my_stuff/model/Person.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Where&apos;sMyStuffVersion_1sam/src/edu/gatech/oad/wheres_my_stuff/view/LoginActivity.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Where&apos;sMyStuffVersion_1sam/src/edu/gatech/oad/wheres_my_stuff/model/Person.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Where&apos;sMyStuff/src/edu/gatech/oad/wheres_my_stuff/view/package-info.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Where&apos;sMyStuff/src/edu/gatech/oad/wheres_my_stuff/view/AddItemActivity.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Where&apos;sMyStuff/src/edu/gatech/oad/wheres_my_stuff/model/Database.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Where&apos;sMyStuff/src/edu/gatech/oad/wheres_my_stuff/model/Database2.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Where&apos;sMyStuff/src/edu/gatech/oad/wheres_my_stuff/model/Person.java"/>
 </editors>
-<item historyLabel="Database.java" index="0">
-<position info="not_deleted" x="5859" y="0"/>
-</item>
-<item historyLabel="Person.java" index="1">
-<position info="not_deleted" x="1222" y="0"/>
-</item>
-<item historyLabel="Person.java" index="1">
-<position info="not_deleted" x="2187" y="0"/>
-</item>
-<item historyLabel="Person.java" index="1">
-<position info="not_deleted" x="2212" y="0"/>
-</item>
-<item historyLabel="Database.java" index="0">
-<position info="not_deleted" x="5859" y="0"/>
-</item>
-<item historyLabel="Database.java" index="0">
-<position info="not_deleted" x="4355" y="0"/>
-</item>
-<item historyLabel="Person.java" index="1">
-<position info="not_deleted" x="1260" y="0"/>
-</item>
-<item historyLabel="Database.java" index="0">
-<position info="not_deleted" x="4355" y="0"/>
-</item>
-<item historyLabel="Database.java" index="0">
-<position info="not_deleted" x="5245" y="0"/>
-</item>
 <item historyLabel="Database.java" index="0">
 <position/>
 </item>
@@ -476,8 +479,35 @@
 <item historyLabel="Person.java" index="3">
 <position info="not_deleted" x="1671" y="0"/>
 </item>
-<item active="true" historyLabel="Database.java" index="0">
+<item historyLabel="Database.java" index="0">
 <position info="not_deleted" x="8272" y="0"/>
+</item>
+<item historyLabel="package-info.java" index="4">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="AddItemActivity.java" index="5">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="Database.java" index="6">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="Database2.java" index="7">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="Database.java" index="6">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="Person.java" index="8">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="Database.java" index="6">
+<position info="not_deleted" x="8509" y="0"/>
+</item>
+<item historyLabel="Person.java" index="8">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item active="true" historyLabel="Database.java" index="6">
+<position info="not_deleted" x="8509" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -497,6 +527,21 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Person.java" tooltip="Where&apos;sMyStuff/src/edu/gatech/oad/wheres_my_stuff/model/Person.java">
+<persistable path="/Where&apos;sMyStuff/src/edu/gatech/oad/wheres_my_stuff/model/Person.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Database2.java" tooltip="Where&apos;sMyStuff/src/edu/gatech/oad/wheres_my_stuff/model/Database2.java">
+<persistable path="/Where&apos;sMyStuff/src/edu/gatech/oad/wheres_my_stuff/model/Database2.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Database.java" tooltip="Where&apos;sMyStuff/src/edu/gatech/oad/wheres_my_stuff/model/Database.java">
+<persistable path="/Where&apos;sMyStuff/src/edu/gatech/oad/wheres_my_stuff/model/Database.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AddItemActivity.java" tooltip="Where&apos;sMyStuff/src/edu/gatech/oad/wheres_my_stuff/view/AddItemActivity.java">
+<persistable path="/Where&apos;sMyStuff/src/edu/gatech/oad/wheres_my_stuff/view/AddItemActivity.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="package-info.java" tooltip="Where&apos;sMyStuff/src/edu/gatech/oad/wheres_my_stuff/view/package-info.java">
+<persistable path="/Where&apos;sMyStuff/src/edu/gatech/oad/wheres_my_stuff/view/package-info.java"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MyItem.java" tooltip="Where&apos;sMyStuffVersion_1sam/src/edu/gatech/oad/wheres_my_stuff/model/MyItem.java">
 <persistable path="/Where&apos;sMyStuffVersion_1sam/src/edu/gatech/oad/wheres_my_stuff/model/MyItem.java"/>
 </file>
