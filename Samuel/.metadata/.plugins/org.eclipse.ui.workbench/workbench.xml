@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="44" version="2.0">
+<workbench progressCount="55" version="2.0">
 <workbenchAdvisor/>
 <window height="728" maximized="true" width="1024" x="25" y="0">
 <fastViewData fastViewLocation="1024">
@@ -40,6 +40,7 @@
 <part id="1"/>
 <part id="2"/>
 <part id="3"/>
+<part id="4"/>
 </presentation>
 </folder>
 </info>
@@ -47,28 +48,32 @@
 <editor id="com.springsource.sts.internal.ide.ui.editors.MultiPageDashboardEditor" name="Dashboard" partName="Dashboard" title="Dashboard" tooltip="Dashboard" workbook="DefaultEditorWorkbook">
 <input factoryID="com.springsource.sts.ide.ui.dashboard.elementFactory" openDashboard="true"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Database.java" partName="Database.java" path="C:/Users/admin/Programming/GitHub/Sherpas-Code-Dump/Samuel/Where&apos;sMyStuffVersion_1sam/src/edu/gatech/oad/wheres_my_stuff/model/Database.java" title="Database.java" tooltip="Where&apos;sMyStuffVersion_1sam/src/edu/gatech/oad/wheres_my_stuff/model/Database.java" workbook="DefaultEditorWorkbook">
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Database.java" partName="Database.java" path="C:/Users/admin/Programming/GitHub/Sherpas-Code-Dump/Samuel/Where&apos;sMyStuffVersion_1sam/src/edu/gatech/oad/wheres_my_stuff/model/Database.java" title="Database.java" tooltip="Where&apos;sMyStuffVersion_1sam/src/edu/gatech/oad/wheres_my_stuff/model/Database.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Where&apos;sMyStuffVersion_1sam/src/edu/gatech/oad/wheres_my_stuff/model/Database.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3388" selectionTopPixel="1737"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="8272" selectionTopPixel="3201"/>
 </editor>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="LoginActivity.java" partName="LoginActivity.java" path="C:/Users/admin/Programming/GitHub/Sherpas-Code-Dump/Samuel/Where&apos;sMyStuffVersion_1sam/src/edu/gatech/oad/wheres_my_stuff/view/LoginActivity.java" title="LoginActivity.java" tooltip="Where&apos;sMyStuffVersion_1sam/src/edu/gatech/oad/wheres_my_stuff/view/LoginActivity.java" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="LoginActivity.java" partName="LoginActivity.java" path="C:/Users/admin/Programming/GitHub/Sherpas-Code-Dump/Samuel/Where&apos;sMyStuffVersion_1sam/src/edu/gatech/oad/wheres_my_stuff/view/LoginActivity.java" title="LoginActivity.java" tooltip="Where&apos;sMyStuffVersion_1sam/src/edu/gatech/oad/wheres_my_stuff/view/LoginActivity.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Where&apos;sMyStuffVersion_1sam/src/edu/gatech/oad/wheres_my_stuff/view/LoginActivity.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="289"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Person.java" partName="Person.java" path="C:/Users/admin/Programming/GitHub/Sherpas-Code-Dump/Samuel/Where&apos;sMyStuffVersion_1sam/src/edu/gatech/oad/wheres_my_stuff/model/Person.java" title="Person.java" tooltip="Where&apos;sMyStuffVersion_1sam/src/edu/gatech/oad/wheres_my_stuff/model/Person.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Where&apos;sMyStuffVersion_1sam/src/edu/gatech/oad/wheres_my_stuff/model/Person.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="386"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1671" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MyItem.java" partName="MyItem.java" path="C:/Users/admin/Programming/GitHub/Sherpas-Code-Dump/Samuel/Where&apos;sMyStuffVersion_1sam/src/edu/gatech/oad/wheres_my_stuff/model/MyItem.java" title="MyItem.java" tooltip="Where&apos;sMyStuffVersion_1sam/src/edu/gatech/oad/wheres_my_stuff/model/MyItem.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Where&apos;sMyStuffVersion_1sam/src/edu/gatech/oad/wheres_my_stuff/model/MyItem.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="302" selectionTopPixel="0"/>
 </editor>
 </editors>
 <views>
 <view id="org.springframework.ide.eclipse.ui.navigator.springExplorer" partName="Spring Explorer">
 <viewState CommonNavigator.LINKING_ENABLED="0" org.springframework.ide.eclipse.ui.navigator.workingsets.showTopLevelWorkingSets="0"/>
 </view>
+<view id="org.eclipse.jdt.junit.ResultView" partName="JUnit"/>
 <view id="com.android.ide.eclipse.ddms.views.LogCatView" partName="LogCat">
 <viewState/>
 </view>
 <view id="org.eclipse.ui.views.AllMarkersView" partName="Markers"/>
-<view id="org.eclipse.jdt.junit.ResultView" partName="JUnit"/>
 <view id="org.eclipse.ui.views.ProgressView" partName="Progress"/>
 <view id="org.springframework.ide.eclipse.aop.ui.navigator.aopReferenceModelNavigator" partName="Beans Cross References"/>
 <view id="org.eclipse.contribution.xref.ui.views.XReferenceView" partName="Cross References"/>
@@ -139,7 +144,7 @@
 <viewState CommonNavigator.LINKING_ENABLED="0"/>
 </view>
 </views>
-<perspectives activePart="org.eclipse.jdt.ui.PackageExplorer" activePerspective="com.springsource.sts.ide.perspective">
+<perspectives activePart="org.eclipse.jdt.ui.CompilationUnitEditor" activePerspective="com.springsource.sts.ide.perspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="com.springsource.sts.internal.ide.ui.perspective.StsPerspective" id="com.springsource.sts.ide.perspective" label="Spring"/>
 <alwaysOnActionSet id="com.springsource.sts.ide.help.actionSet"/>
@@ -319,44 +324,160 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="com.springsource.sts.ide.ui.dashboard.elementFactory" id="com.springsource.sts.internal.ide.ui.editors.MultiPageDashboardEditor" openDashboard="true"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Where&apos;sMyStuffVersion_1sam/src/edu/gatech/oad/wheres_my_stuff/model/Database.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Where&apos;sMyStuffVersion_1sam/src/edu/gatech/oad/wheres_my_stuff/model/Person.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Where&apos;sMyStuffVersion_1sam/src/edu/gatech/oad/wheres_my_stuff/view/LoginActivity.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Where&apos;sMyStuffVersion_1sam/src/edu/gatech/oad/wheres_my_stuff/model/Person.java"/>
 </editors>
-<item historyLabel="Dashboard" index="0"/>
-<item historyLabel="Database.java" index="1">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="Database.java" index="0">
+<position info="not_deleted" x="5859" y="0"/>
+</item>
+<item historyLabel="Person.java" index="1">
+<position info="not_deleted" x="1222" y="0"/>
+</item>
+<item historyLabel="Person.java" index="1">
+<position info="not_deleted" x="2187" y="0"/>
+</item>
+<item historyLabel="Person.java" index="1">
+<position info="not_deleted" x="2212" y="0"/>
+</item>
+<item historyLabel="Database.java" index="0">
+<position info="not_deleted" x="5859" y="0"/>
+</item>
+<item historyLabel="Database.java" index="0">
+<position info="not_deleted" x="4355" y="0"/>
+</item>
+<item historyLabel="Person.java" index="1">
+<position info="not_deleted" x="1260" y="0"/>
+</item>
+<item historyLabel="Database.java" index="0">
+<position info="not_deleted" x="4355" y="0"/>
+</item>
+<item historyLabel="Database.java" index="0">
+<position info="not_deleted" x="5245" y="0"/>
+</item>
+<item historyLabel="Database.java" index="0">
+<position/>
+</item>
+<item historyLabel="Database.java" index="0">
+<position info="not_deleted" x="5846" y="0"/>
+</item>
+<item historyLabel="Person.java" index="1">
+<position info="not_deleted" x="361" y="0"/>
+</item>
+<item historyLabel="Database.java" index="0">
+<position info="not_deleted" x="5846" y="0"/>
+</item>
+<item historyLabel="Person.java" index="1">
+<position info="not_deleted" x="361" y="0"/>
+</item>
+<item historyLabel="Database.java" index="0">
+<position info="not_deleted" x="3168" y="0"/>
+</item>
+<item historyLabel="Person.java" index="1">
+<position info="not_deleted" x="361" y="0"/>
+</item>
+<item historyLabel="Person.java" index="1">
+<position info="not_deleted" x="3606" y="0"/>
+</item>
+<item historyLabel="Person.java" index="1">
+<position info="not_deleted" x="2858" y="7"/>
+</item>
+<item historyLabel="Person.java" index="1">
+<position info="not_deleted" x="2885" y="17"/>
+</item>
+<item historyLabel="Person.java" index="1">
+<position info="not_deleted" x="3644" y="387"/>
+</item>
+<item historyLabel="Person.java" index="1">
+<position info="not_deleted" x="2245" y="0"/>
+</item>
+<item historyLabel="Person.java" index="1">
+<position info="not_deleted" x="2807" y="0"/>
+</item>
+<item historyLabel="Person.java" index="1">
+<position info="not_deleted" x="3365" y="0"/>
+</item>
+<item historyLabel="Person.java" index="1">
+<position info="not_deleted" x="3364" y="0"/>
+</item>
+<item historyLabel="Person.java" index="1">
+<position info="not_deleted" x="2302" y="0"/>
+</item>
+<item historyLabel="Person.java" index="1">
+<position info="not_deleted" x="3410" y="0"/>
+</item>
+<item historyLabel="Person.java" index="1">
+<position info="not_deleted" x="3406" y="0"/>
+</item>
+<item historyLabel="Person.java" index="1">
+<position info="not_deleted" x="3412" y="0"/>
+</item>
+<item historyLabel="Person.java" index="1">
+<position info="not_deleted" x="2352" y="0"/>
+</item>
+<item historyLabel="Person.java" index="1">
+<position info="not_deleted" x="3410" y="0"/>
+</item>
+<item historyLabel="Person.java" index="1">
+<position/>
+</item>
+<item historyLabel="Person.java" index="1">
+<position info="not_deleted" x="3812" y="0"/>
+</item>
+<item historyLabel="Person.java" index="1">
+<position info="not_deleted" x="1671" y="0"/>
+</item>
+<item historyLabel="Database.java" index="0">
+<position info="not_deleted" x="3168" y="0"/>
+</item>
+<item historyLabel="Person.java" index="1">
+<position info="not_deleted" x="1671" y="0"/>
+</item>
+<item historyLabel="Database.java" index="0">
+<position info="not_deleted" x="3168" y="0"/>
+</item>
+<item historyLabel="Database.java" index="0">
+<position info="not_deleted" x="3162" y="0"/>
+</item>
+<item historyLabel="Database.java" index="0">
+<position info="not_deleted" x="3168" y="0"/>
+</item>
+<item historyLabel="Database.java" index="0">
+<position info="not_deleted" x="3999" y="0"/>
+</item>
+<item historyLabel="Database.java" index="0">
+<position info="not_deleted" x="2643" y="0"/>
 </item>
 <item historyLabel="LoginActivity.java" index="2">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="Database.java" index="1">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="Database.java" index="0">
+<position info="not_deleted" x="2643" y="0"/>
 </item>
-<item historyLabel="Database.java" index="1">
-<position info="not_deleted" x="3304" y="0"/>
+<item historyLabel="Database.java" index="0">
+<position info="not_deleted" x="9712" y="0"/>
 </item>
-<item historyLabel="LoginActivity.java" index="2">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="Database.java" index="0">
+<position info="not_deleted" x="6757" y="0"/>
+</item>
+<item historyLabel="Database.java" index="0">
+<position info="not_deleted" x="6855" y="0"/>
+</item>
+<item historyLabel="Database.java" index="0">
+<position info="not_deleted" x="6853" y="0"/>
+</item>
+<item historyLabel="Database.java" index="0">
+<position info="not_deleted" x="7669" y="0"/>
+</item>
+<item historyLabel="Database.java" index="0">
+<position info="not_deleted" x="8745" y="0"/>
 </item>
 <item historyLabel="Person.java" index="3">
-<position info="not_deleted" x="0" y="0"/>
+<position info="not_deleted" x="1671" y="0"/>
 </item>
-<item historyLabel="Database.java" index="1">
-<position info="not_deleted" x="3304" y="0"/>
-</item>
-<item historyLabel="Person.java" index="3">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="LoginActivity.java" index="2">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="Database.java" index="1">
-<position info="not_deleted" x="3388" y="0"/>
-</item>
-<item active="true" historyLabel="LoginActivity.java" index="2">
-<position info="not_deleted" x="0" y="0"/>
+<item active="true" historyLabel="Database.java" index="0">
+<position info="not_deleted" x="8272" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -376,6 +497,9 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MyItem.java" tooltip="Where&apos;sMyStuffVersion_1sam/src/edu/gatech/oad/wheres_my_stuff/model/MyItem.java">
+<persistable path="/Where&apos;sMyStuffVersion_1sam/src/edu/gatech/oad/wheres_my_stuff/model/MyItem.java"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Person.java" tooltip="Where&apos;sMyStuffVersion_1sam/src/edu/gatech/oad/wheres_my_stuff/model/Person.java">
 <persistable path="/Where&apos;sMyStuffVersion_1sam/src/edu/gatech/oad/wheres_my_stuff/model/Person.java"/>
 </file>
