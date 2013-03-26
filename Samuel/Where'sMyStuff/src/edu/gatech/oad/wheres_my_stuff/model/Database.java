@@ -6,7 +6,9 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
@@ -306,6 +308,63 @@ public class Database {
 			}
 		}
 		return false;
+	}
+	
+//	public DBItem addItem(String name, String description, int typeID, int categoryID, boolean isResolved, long posterID, int reward, double lat, double lon)
+//	{
+//		
+//	}
+	
+	public Map<String, Integer> getCategoryTable()
+	{
+		String file = "getCategories.php";
+		ArrayList<Person> lockedList = new ArrayList<Person>();
+		ArrayList<NameValuePair> params = new ArrayList<NameValuePair>();
+		JSONArray result = makeHttpRequest(host+file, "GET", params);
+		if(result!=null&&result.length()!=0)
+		{
+			try {
+				HashMap<String, Integer> table = new HashMap<String, Integer>();
+				for(int i = 0; i<result.length(); i++)
+				{
+					JSONObject jObject = result.getJSONObject(i);
+					Integer ID = jObject.getInt("ID");
+					String name = jObject.getString("Name");
+					table.put(name, ID);
+				}
+				return table;
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return null;
+	}
+	
+	public Map<String, Integer> getTypeTable()
+	{
+		String file = "getTypes.php";
+		ArrayList<Person> lockedList = new ArrayList<Person>();
+		ArrayList<NameValuePair> params = new ArrayList<NameValuePair>();
+		JSONArray result = makeHttpRequest(host+file, "GET", params);
+		if(result!=null&&result.length()!=0)
+		{
+			try {
+				HashMap<String, Integer> table = new HashMap<String, Integer>();
+				for(int i = 0; i<result.length(); i++)
+				{
+					JSONObject jObject = result.getJSONObject(i);
+					Integer ID = jObject.getInt("ID");
+					String name = jObject.getString("Name");
+					table.put(name, ID);
+				}
+				return table;
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return null;
 	}
 	
 //	public JSONArray makeHttpRequest(String url, String method, List<NameValuePair> params)

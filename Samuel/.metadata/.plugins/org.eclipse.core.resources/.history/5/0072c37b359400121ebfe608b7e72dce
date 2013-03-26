@@ -1,0 +1,7 @@
+package edu.gatech.oad.wheres_my_stuff.model;
+
+public class DBItem
+{
+	private long ID, PosterID, ResolverID;
+	
+}
