@@ -1,7 +1,6 @@
 <?php
 require_once('D:\Hosting\6939230\html\sherpas\db_connect.php');
 $db = new DB_CONNECT();
-String name, String description, int typeID, int categoryID, boolean isResolved, long posterID, int reward, double lat, double lon
 $name = $_POST['name'];
 $description = $_POST['description'];
 $typeID = $_POST['typeID'];
@@ -14,7 +13,7 @@ if($result)
 {
 /*	$row=mysql_query("SELECT ID FROM Person WHERE Email = '$email';");
 	while($row=mysql_fetch_assoc($sql)) */
-	$output["ID"]=$mysql_insert_id();
+	$output["ID"]=mysql_insert_id();
 	$output["success"]=1;
 }
 else

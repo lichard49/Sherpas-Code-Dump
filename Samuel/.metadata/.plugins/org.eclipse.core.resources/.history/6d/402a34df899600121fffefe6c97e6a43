@@ -473,6 +473,7 @@ public class Database {
 					long id = jObject.getLong("ID");
 					boolean isResolved = jObject.getInt("IsResolved")==1;
 					long posterID = jObject.getLong("PosterID");
+					SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd");
 					Date postedDate = sdf.parse(jObject.getString("DatePosted"));
 					items.add(new DBItem(id, name, description, typeID, categoryID2, isResolved, posterID, postedDate));
 				}
