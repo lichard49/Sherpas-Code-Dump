@@ -26,6 +26,19 @@ public class DBItem
 		this.datePosted = datePosted;
 	}
 	
+	public DBItem(long ID, String name, String description, int typeID, int categoryID,
+			boolean isResolved, long posterID, Date datePosted)
+	{
+		this.ID = ID;
+		this.name = name;
+		this.description = description;
+		this.typeID = typeID;
+		this.categoryID = categoryID;
+		this.isResolved = isResolved;
+		this.posterID = posterID;
+		this.datePosted = datePosted;
+	}
+	
 	public long getID()
 	{
 		return ID;

@@ -14,7 +14,7 @@ if($result)
 {
 /*	$row=mysql_query("SELECT ID FROM Person WHERE Email = '$email';");
 	while($row=mysql_fetch_assoc($sql)) */
-	$output["ID"]=$mysql_insert_id();
+	$output["ID"]=mysql_insert_id();
 	$output["success"]=1;
 }
 else
