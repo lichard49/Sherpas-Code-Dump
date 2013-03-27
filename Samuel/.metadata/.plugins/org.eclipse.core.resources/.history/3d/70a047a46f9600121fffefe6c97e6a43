@@ -5,10 +5,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -313,72 +310,10 @@ public class Database {
 		return false;
 	}
 	
-	public DBItem addItem(String name, String description, int typeID, int categoryID, boolean isResolved, long posterID)
-	{
-		String file = "createItem.php";
-		ArrayList<NameValuePair> params = new ArrayList<NameValuePair>();
-		params.add(new BasicNameValuePair("name", name));
-		params.add(new BasicNameValuePair("description", description));
-		params.add(new BasicNameValuePair("typeID", typeID+""));
-		params.add(new BasicNameValuePair("categoryID", categoryID+""));
-		params.add(new BasicNameValuePair("isResolved", (isResolved?"1":"0")));
-		params.add(new BasicNameValuePair("posterID", posterID+""));
-		JSONArray result = makeHttpRequest(host+file, "POST", params);
-		if(result!=null && result.length()!=0)
-		{
-			try {
-				JSONObject jObject = result.getJSONObject(0);
-				int success = jObject.getInt("success");
-				if(success==1)
-				{
-					long id = jObject.getLong("ID");
-					Date datePosted = new Date();
-					DBItem item = new DBItem(id, name, description, typeID, categoryID, isResolved, posterID, datePosted);
-					return item;
-				}
-			} catch (JSONException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-		return null;
-		
-	}
-	
-	public ArrayList<DBItem> getAllItems()
-	{
-		String file = "getAllItems.php";
-		ArrayList<DBItem> items = new ArrayList<DBItem>();
-		ArrayList<NameValuePair> params = new ArrayList<NameValuePair>();
-		JSONArray result = makeHttpRequest(host+file, "GET", params);
-		if(result!=null&&result.length()!=0)
-		{
-			try {
-				for(int i = 0; i<result.length(); i++)
-				{
-					JSONObject jObject = result.getJSONObject(i);
-					String name = jObject.getString("Name");
-					String description = jObject.getString("Description");
-					int typeID = jObject.getInt("TypeID");
-					int categoryID = jObject.getInt("CategoryID");
-					long id = jObject.getLong("ID");
-					boolean isResolved = jObject.getInt("IsResolved")==1;
-					long posterID = jObject.getLong("PosterID");
-					SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd");
-					Date postedDate = sdf.parse(jObject.getString("DatePosted"));
-					items.add(new DBItem(id, name, description, typeID, categoryID, isResolved, posterID, postedDate));
-				}
-				return items;
-			} catch (JSONException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (ParseException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-		return null;
-	}
+//	public DBItem addItem(String name, String description, int typeID, int categoryID, boolean isResolved, long posterID)
+//	{
+//		
+//	}
 	
 	public Map<String, Integer> getCategoryTable()
 	{

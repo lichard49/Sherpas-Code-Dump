@@ -8,16 +8,13 @@ $typeID = $_POST['typeID'];
 $categoryID = $_POST['categoryID'];
 $isResolved = $_POST['isResolved'];
 $posterID = $_POST['posterID'];
-$reward = $_POST['reward'];
-$lat = $_POST['lat'];
-$lon = $_POST['lon'];
 
-$result=mysql_query("INSERT INTO Item(FirstName, LastName, Email, Phone, Password, IsAdmin) VALUES ('$firstName', '$lastName','$email', $phone, '$password', '$admin');");
+$result=mysql_query("INSERT INTO Item(Name, Description, TypeID, CategoryID, IsResolved, PosterID, DatePosted) VALUES ('$name', '$description',$typeID, $categoryID, $isResolved, $posterID, CURDATE());");
 if($result)
 {
-	$row=mysql_query("SELECT ID FROM Person WHERE Email = '$email';");
-	while($row=mysql_fetch_assoc($sql))
-	$output[]=$row;
+/*	$row=mysql_query("SELECT ID FROM Person WHERE Email = '$email';");
+	while($row=mysql_fetch_assoc($sql)) */
+	$output["ID"]=$mysql_insert_id();
 	$output["success"]=1;
 }
 else

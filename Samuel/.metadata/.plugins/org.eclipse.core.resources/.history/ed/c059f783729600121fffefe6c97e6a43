@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -368,11 +367,8 @@ public class Database {
 					Date postedDate = sdf.parse(jObject.getString("DatePosted"));
 					items.add(new DBItem(id, name, description, typeID, categoryID, isResolved, posterID, postedDate));
 				}
-				return items;
+				return lockedList;
 			} catch (JSONException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (ParseException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}

@@ -5,8 +5,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -364,15 +362,11 @@ public class Database {
 					long id = jObject.getLong("ID");
 					boolean isResolved = jObject.getInt("IsResolved")==1;
 					long posterID = jObject.getLong("PosterID");
-					SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd");
-					Date postedDate = sdf.parse(jObject.getString("DatePosted"));
-					items.add(new DBItem(id, name, description, typeID, categoryID, isResolved, posterID, postedDate));
+					Date postedDate = DateFormat.parse(jObject.getString("DatePosted")==1);
+					lockedList.add(new Person(firstName, lastName, uEmail, phone, id, isLocked, isAdmin));
 				}
-				return items;
+				return lockedList;
 			} catch (JSONException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (ParseException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
