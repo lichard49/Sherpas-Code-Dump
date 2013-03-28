@@ -316,7 +316,7 @@ public class Database {
 	public DBItem addItem(String name, String description, int typeID, int categoryID, boolean isResolved, long posterID)
 	{
 		Date datePosted = new Date();
-		return addItem(name, description, typeID, categoryID, isResolved, posterID, datePosted);
+		addItem(name, description, typeID, categoryID, isResolved, posterID, datePosted);
 	}
 	
 	public DBItem addItem(String name, String description, int typeID, int categoryID, boolean isResolved, long posterID, Date datePosted)
@@ -329,8 +329,6 @@ public class Database {
 		params.add(new BasicNameValuePair("categoryID", categoryID+""));
 		params.add(new BasicNameValuePair("isResolved", (isResolved?"1":"0")));
 		params.add(new BasicNameValuePair("posterID", posterID+""));
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd");
-		params.add(new BasicNameValuePair("date", sdf.format(datePosted)));
 		JSONArray result = makeHttpRequest(host+file, "POST", params);
 		if(result!=null && result.length()!=0)
 		{
@@ -340,6 +338,7 @@ public class Database {
 				if(success==1)
 				{
 					long id = jObject.getLong("ID");
+					Date datePosted = new Date();
 					DBItem item = new DBItem(id, name, description, typeID, categoryID, isResolved, posterID, datePosted);
 					return item;
 				}

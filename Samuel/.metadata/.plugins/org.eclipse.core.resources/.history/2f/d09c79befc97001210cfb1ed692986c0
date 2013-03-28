@@ -329,8 +329,7 @@ public class Database {
 		params.add(new BasicNameValuePair("categoryID", categoryID+""));
 		params.add(new BasicNameValuePair("isResolved", (isResolved?"1":"0")));
 		params.add(new BasicNameValuePair("posterID", posterID+""));
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd");
-		params.add(new BasicNameValuePair("date", sdf.format(datePosted)));
+		params.add(new BasicNameValuePair("date"))
 		JSONArray result = makeHttpRequest(host+file, "POST", params);
 		if(result!=null && result.length()!=0)
 		{

@@ -7,8 +7,13 @@ $typeID = $_POST['typeID'];
 $categoryID = $_POST['categoryID'];
 $isResolved = $_POST['isResolved'];
 $posterID = $_POST['posterID'];
+$date = "";
+if (isset($_GET['date']))
+	$date = "'$date'";
+else
+	$date = "CURDATE()";
 
-$result=mysql_query("INSERT INTO Item(Name, Description, TypeID, CategoryID, IsResolved, PosterID, DatePosted) VALUES ('$name', '$description',$typeID, $categoryID, $isResolved, $posterID, CURDATE());");
+$result=mysql_query("INSERT INTO Item(Name, Description, TypeID, CategoryID, IsResolved, PosterID, DatePosted) VALUES ('$name', '$description',$typeID, $categoryID, $isResolved, $posterID, $date);");
 if($result)
 {
 /*	$row=mysql_query("SELECT ID FROM Person WHERE Email = '$email';");
