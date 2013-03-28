@@ -488,55 +488,6 @@ public class Database {
 		return null;
 	}
 	
-	public ArrayList<DBItem> filterItems(int typeID, int categoryID, Date date)
-	{
-		String file = "filterItems.php";
-		ArrayList<DBItem> items = new ArrayList<DBItem>();
-		ArrayList<NameValuePair> params = new ArrayList<NameValuePair>();
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd");
-		
-		if(typeID>-1)
-		{
-			params.add(new BasicNameValuePair("typeID", typeID+""));
-		}
-		if(categoryID>-1)
-		{
-			params.add(new BasicNameValuePair("categoryID", categoryID+""));
-		}
-		if(date!=null)
-		{
-			params.add(new BasicNameValuePair("date", sdf.format(date)));
-		}
-		
-		JSONArray result = makeHttpRequest(host+file, "GET", params);
-		if(result!=null&&result.length()!=0)
-		{
-			try {
-				for(int i = 0; i<result.length(); i++)
-				{
-					JSONObject jObject = result.getJSONObject(i);
-					String name = jObject.getString("Name");
-					String description = jObject.getString("Description");
-					int typeID2 = jObject.getInt("TypeID");
-					int categoryID2 = jObject.getInt("CategoryID");
-					long id = jObject.getLong("ID");
-					boolean isResolved = jObject.getInt("IsResolved")==1;
-					long posterID = jObject.getLong("PosterID");
-					Date postedDate = sdf.parse(jObject.getString("DatePosted"));
-					items.add(new DBItem(id, name, description, typeID2, categoryID2, isResolved, posterID, postedDate));
-				}
-				return items;
-			} catch (JSONException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (ParseException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-		return null;
-	}
-	
 	public Map<String, Integer> getCategoryTable()
 	{
 		String file = "getCategories.php";

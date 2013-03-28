@@ -493,7 +493,6 @@ public class Database {
 		String file = "filterItems.php";
 		ArrayList<DBItem> items = new ArrayList<DBItem>();
 		ArrayList<NameValuePair> params = new ArrayList<NameValuePair>();
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd");
 		
 		if(typeID>-1)
 		{
@@ -505,6 +504,7 @@ public class Database {
 		}
 		if(date!=null)
 		{
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd");
 			params.add(new BasicNameValuePair("date", sdf.format(date)));
 		}
 		
@@ -517,13 +517,13 @@ public class Database {
 					JSONObject jObject = result.getJSONObject(i);
 					String name = jObject.getString("Name");
 					String description = jObject.getString("Description");
-					int typeID2 = jObject.getInt("TypeID");
+					int typeID = jObject.getInt("TypeID");
 					int categoryID2 = jObject.getInt("CategoryID");
 					long id = jObject.getLong("ID");
 					boolean isResolved = jObject.getInt("IsResolved")==1;
 					long posterID = jObject.getLong("PosterID");
 					Date postedDate = sdf.parse(jObject.getString("DatePosted"));
-					items.add(new DBItem(id, name, description, typeID2, categoryID2, isResolved, posterID, postedDate));
+					items.add(new DBItem(id, name, description, typeID, categoryID2, isResolved, posterID, postedDate));
 				}
 				return items;
 			} catch (JSONException e) {
