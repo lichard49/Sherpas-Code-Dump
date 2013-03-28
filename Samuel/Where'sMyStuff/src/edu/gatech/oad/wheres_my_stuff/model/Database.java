@@ -461,7 +461,7 @@ public class Database {
 	
 	public ArrayList<DBItem> getItemsPostedAfterDate(Date date)
 	{
-		String file = "getItemsByCategoryID.php";
+		String file = "getItemsAfterDate.php";
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd");
 		ArrayList<DBItem> items = new ArrayList<DBItem>();
 		ArrayList<NameValuePair> params = new ArrayList<NameValuePair>();
