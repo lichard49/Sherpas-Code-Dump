@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout 
+	 android:weightSum="1"
+	 android:layout_height="wrap_content" 
+	 android:layout_width="wrap_content" 
+	 android:orientation="vertical"
+	 android:background="@color/Black" 
+	 xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/greeting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logo"
+        android:paddingBottom="10dp"
+        android:textColor="@color/White"
+        android:layout_centerHorizontal="true"
+        android:text="Welcome, "
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+    
+    <Button
+        android:id="@+id/admin_panel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/greeting"
+        android:layout_alignParentRight="true"
+        android:visibility="gone"
+        android:text="Admin stuff" />
+    
+    
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/greeting"
+        android:layout_above="@+id/signout_button" >
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="0px"
+            android:layout_weight="1" >
+
+            <ImageButton
+                android:id="@+id/mail_button"
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingLeft="40dp"
+                android:background="@android:color/black"
+                android:src="@drawable/mail" />
+
+            <ImageButton
+                android:id="@+id/add_item_button"
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingRight="40dp"
+                android:background="@android:color/black"
+                android:src="@drawable/add" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="0px"
+            android:layout_weight="3" >
+
+            <ImageButton
+                android:id="@+id/favorites_button"
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingLeft="40dp"
+                android:background="@android:color/black"
+                android:src="@drawable/favorite" />
+
+            <ImageButton
+                android:id="@+id/search_button"
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingRight="40dp"
+                android:background="@android:color/black"
+                android:src="@drawable/search" />
+
+        </TableRow>
+    </TableLayout>
+    
+    <ImageButton
+	    android:id="@+id/signout_button"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentBottom="true"
+	    android:layout_centerHorizontal="true"
+	    android:background="@color/Black"
+	    android:paddingBottom="10dp"
+	    android:src="@drawable/signout" />
+    
+ </RelativeLayout>
