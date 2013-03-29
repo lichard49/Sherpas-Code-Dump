@@ -16,8 +16,6 @@ else
 $result=mysql_query("INSERT INTO Item(Name, Description, TypeID, CategoryID, IsResolved, PosterID, DatePosted) VALUES ('$name', '$description',$typeID, $categoryID, $isResolved, $posterID, $date);");
 if($result)
 {
-/*	$row=mysql_query("SELECT ID FROM Person WHERE Email = '$email';");
-	while($row=mysql_fetch_assoc($sql)) */
 	$output["ID"]=mysql_insert_id();
 	$output["success"]=1;
 }

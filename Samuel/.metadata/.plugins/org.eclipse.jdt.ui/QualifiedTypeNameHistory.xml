@@ -10,4 +10,8 @@
 <fullyQualifiedTypeName name="android.text.format.DateFormat"/>
 <fullyQualifiedTypeName name="java.text.DateFormat"/>
 <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
+<fullyQualifiedTypeName name="android.graphics.Bitmap"/>
+<fullyQualifiedTypeName name="android.util.Base64"/>
+<fullyQualifiedTypeName name="java.io.ByteArrayOutputStream"/>
+<fullyQualifiedTypeName name="android.graphics.BitmapFactory"/>
 </qualifiedTypeNameHistroy>

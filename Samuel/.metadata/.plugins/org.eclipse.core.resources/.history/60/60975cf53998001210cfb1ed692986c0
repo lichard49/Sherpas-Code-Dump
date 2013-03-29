@@ -32,7 +32,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.util.Base64;
 import android.util.Log;
@@ -629,9 +628,8 @@ public class Database {
 	public ArrayList<DBImage> getImages(long itemID)
 	{
 		String file = "getImages.php";
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd");
 		ArrayList<DBImage> images = new ArrayList<DBImage>();
-		ArrayList<NameValuePair> params = new ArrayList<NameValuePair>();
-		params.add(new BasicNameValuePair("itemID", itemID+""));
 		JSONArray result = makeHttpRequest(host+file, "GET", params);
 		if(result!=null&&result.length()!=0)
 		{
@@ -639,15 +637,21 @@ public class Database {
 				for(int i = 0; i<result.length(); i++)
 				{
 					JSONObject jObject = result.getJSONObject(i);
+					String name = jObject.getString("Name");
+					String description = jObject.getString("Description");
+					int typeID = jObject.getInt("TypeID");
+					int categoryID2 = jObject.getInt("CategoryID");
 					long id = jObject.getLong("ID");
-					int ordinal = jObject.getInt("Ordinal");
-					String data = jObject.getString("Data");
-					byte[] bArray = Base64.decode(data, Base64.DEFAULT);
-					Bitmap b = BitmapFactory.decodeByteArray(bArray, 0, bArray.length);
-					images.add(new DBImage(id, itemID, ordinal, b));
+					boolean isResolved = jObject.getInt("IsResolved")==1;
+					long posterID = jObject.getLong("PosterID");
+					Date postedDate = sdf.parse(jObject.getString("DatePosted"));
+					items.add(new DBItem(id, name, description, typeID, categoryID2, isResolved, posterID, postedDate));
 				}
-				return images;
+				return items;
 			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (ParseException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}

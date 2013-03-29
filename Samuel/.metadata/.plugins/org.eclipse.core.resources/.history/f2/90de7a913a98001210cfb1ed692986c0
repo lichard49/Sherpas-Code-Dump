@@ -644,10 +644,13 @@ public class Database {
 					String data = jObject.getString("Data");
 					byte[] bArray = Base64.decode(data, Base64.DEFAULT);
 					Bitmap b = BitmapFactory.decodeByteArray(bArray, 0, bArray.length);
-					images.add(new DBImage(id, itemID, ordinal, b));
+					images.add(new DBImage(id, name, description, typeID, categoryID2, isResolved, posterID, postedDate));
 				}
-				return images;
+				return items;
 			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (ParseException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}

@@ -1,0 +1,21 @@
+package edu.gatech.oad.wheres_my_stuff.model;
+
+import android.graphics.Bitmap;
+
+public class DBImage 
+{
+	private Bitmap image;
+	private long ID;
+	private long itemID;
+	private int ordinal;
+	
+	public DBImage(long ID, long itemID, int ordinal, Bitmap image)
+	{
+		this.ID = ID;
+		this.itemID = itemID;
+		this.ordinal = ordinal;
+		this.image = image;
+	}
+	
+	
+}

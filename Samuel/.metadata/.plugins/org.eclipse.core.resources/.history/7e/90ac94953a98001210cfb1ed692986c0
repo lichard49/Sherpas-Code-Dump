@@ -646,8 +646,11 @@ public class Database {
 					Bitmap b = BitmapFactory.decodeByteArray(bArray, 0, bArray.length);
 					images.add(new DBImage(id, itemID, ordinal, b));
 				}
-				return images;
+				return items;
 			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (ParseException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
