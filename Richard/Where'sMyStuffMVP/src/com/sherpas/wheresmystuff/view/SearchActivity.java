@@ -13,7 +13,7 @@ import android.widget.Button;
 import android.widget.ListView;
 
 import com.sherpas.wheresmystuff.R;
-import com.sherpas.wheresmystuff.model.TempDatabaseModel;
+import com.sherpas.wheresmystuff.model.DatabaseModel;
 import com.sherpas.wheresmystuff.presenter.SearchPresenter;
 import com.sherpas.wheresmystuff.support.FilterOptionDialog;
 
@@ -31,7 +31,7 @@ public class SearchActivity extends Activity implements ISearchView
 		
 		filters = new Bundle();
 		dialog = new FilterOptionDialog(this, filters);
-		presenter = new SearchPresenter(this, TempDatabaseModel.getInstance(), filters);
+		presenter = new SearchPresenter(this, DatabaseModel.getInstance(), filters);
 		
 		list = (ListView) findViewById(R.id.list_of_items);
 		list.setAdapter(presenter.populateItemAdapter(this));

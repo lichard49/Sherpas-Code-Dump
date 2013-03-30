@@ -28,6 +28,16 @@
                 android:ems="10"
                 android:hint="Keywords" />
 
+            <ImageButton
+                android:id="@+id/search_keywords"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignRight="@+id/keyword_field"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="3dp"
+                android:background="@color/White"
+                android:src="@drawable/go" />
+
         </RelativeLayout>
 
     </LinearLayout>
@@ -44,16 +54,9 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
-            android:text="Filter" />
-
-        <Button
-            android:id="@+id/search_button"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_toLeftOf="@+id/filter_button"
-            android:text="Seach" />
+            android:background="@color/Black"
+            android:textColor="@color/Blue"
+            android:text="Advnaced Search Options" />
 
     </RelativeLayout>
 

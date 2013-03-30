@@ -12,6 +12,9 @@ import android.content.SharedPreferences;
  *
  */
 public class Person {
+	
+	public static String ROOT_ADMIN = "admin";
+	
 	/** the persons firstName */
 	private String firstName;
 	/** the persons id */

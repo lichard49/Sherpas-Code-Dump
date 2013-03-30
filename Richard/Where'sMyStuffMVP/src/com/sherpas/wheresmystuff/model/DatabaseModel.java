@@ -1,6 +1,7 @@
 package com.sherpas.wheresmystuff.model;
 
 import java.io.BufferedReader;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -30,7 +31,10 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
+import android.util.Base64;
 import android.util.Log;
 
 
@@ -316,6 +320,12 @@ public class DatabaseModel implements IDatabaseModel
 	
 	public DBItem addItem(String name, String description, int typeID, int categoryID, boolean isResolved, long posterID)
 	{
+		Date datePosted = new Date();
+		return addItem(name, description, typeID, categoryID, isResolved, posterID, datePosted);
+	}
+	
+	public DBItem addItem(String name, String description, int typeID, int categoryID, boolean isResolved, long posterID, Date datePosted)
+	{
 		String file = "createItem.php";
 		ArrayList<NameValuePair> params = new ArrayList<NameValuePair>();
 		params.add(new BasicNameValuePair("name", name));
@@ -324,23 +334,30 @@ public class DatabaseModel implements IDatabaseModel
 		params.add(new BasicNameValuePair("categoryID", categoryID+""));
 		params.add(new BasicNameValuePair("isResolved", (isResolved?"1":"0")));
 		params.add(new BasicNameValuePair("posterID", posterID+""));
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd");
+		params.add(new BasicNameValuePair("date", sdf.format(datePosted)));
 		JSONArray result = makeHttpRequest(host+file, "POST", params);
 		if(result!=null && result.length()!=0)
 		{
 			try {
 				JSONObject jObject = result.getJSONObject(0);
 				int success = jObject.getInt("success");
+				System.out.println("success isssss " + success);
 				if(success==1)
 				{
 					long id = jObject.getLong("ID");
-					Date datePosted = new Date();
 					DBItem item = new DBItem(id, name, description, typeID, categoryID, isResolved, posterID, datePosted);
 					return item;
 				}
 			} catch (JSONException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
+				System.out.println("exception happened " + e.getMessage());
 			}
+		}
+		else
+		{
+			System.out.println(result + " was null");
 		}
 		return null;
 		
@@ -455,7 +472,7 @@ public class DatabaseModel implements IDatabaseModel
 	
 	public ArrayList<DBItem> getItemsPostedAfterDate(Date date)
 	{
-		String file = "getItemsByCategoryID.php";
+		String file = "getItemsAfterDate.php";
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd");
 		ArrayList<DBItem> items = new ArrayList<DBItem>();
 		ArrayList<NameValuePair> params = new ArrayList<NameValuePair>();
@@ -476,6 +493,55 @@ public class DatabaseModel implements IDatabaseModel
 					long posterID = jObject.getLong("PosterID");
 					Date postedDate = sdf.parse(jObject.getString("DatePosted"));
 					items.add(new DBItem(id, name, description, typeID, categoryID2, isResolved, posterID, postedDate));
+				}
+				return items;
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (ParseException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return null;
+	}
+	
+	public ArrayList<DBItem> filterItems(int typeID, int categoryID, Date date)
+	{
+		String file = "filterItems.php";
+		ArrayList<DBItem> items = new ArrayList<DBItem>();
+		ArrayList<NameValuePair> params = new ArrayList<NameValuePair>();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd");
+		
+		if(typeID>-1)
+		{
+			params.add(new BasicNameValuePair("typeID", typeID+""));
+		}
+		if(categoryID>-1)
+		{
+			params.add(new BasicNameValuePair("categoryID", categoryID+""));
+		}
+		if(date!=null)
+		{
+			params.add(new BasicNameValuePair("date", sdf.format(date)));
+		}
+		
+		JSONArray result = makeHttpRequest(host+file, "GET", params);
+		if(result!=null&&result.length()!=0)
+		{
+			try {
+				for(int i = 0; i<result.length(); i++)
+				{
+					JSONObject jObject = result.getJSONObject(i);
+					String name = jObject.getString("Name");
+					String description = jObject.getString("Description");
+					int typeID2 = jObject.getInt("TypeID");
+					int categoryID2 = jObject.getInt("CategoryID");
+					long id = jObject.getLong("ID");
+					boolean isResolved = jObject.getInt("IsResolved")==1;
+					long posterID = jObject.getLong("PosterID");
+					Date postedDate = sdf.parse(jObject.getString("DatePosted"));
+					items.add(new DBItem(id, name, description, typeID2, categoryID2, isResolved, posterID, postedDate));
 				}
 				return items;
 			} catch (JSONException e) {
@@ -533,6 +599,61 @@ public class DatabaseModel implements IDatabaseModel
 					table.put(name, ID);
 				}
 				return table;
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return null;
+	}
+	
+	public boolean createImage(long itemID, int ordinal, Bitmap b)
+	{
+		String file = "createImage.php";
+		ArrayList<NameValuePair> params = new ArrayList<NameValuePair>();
+		params.add(new BasicNameValuePair("itemID", itemID+""));
+		params.add(new BasicNameValuePair("ordinal", ""+ordinal));
+		ByteArrayOutputStream baos = new ByteArrayOutputStream();  
+		b.compress(Bitmap.CompressFormat.JPEG, 100, baos); //bm is the bitmap object   
+		byte[] bArray = baos.toByteArray(); 
+		String encodedImage = Base64.encodeToString(bArray, Base64.DEFAULT);
+		params.add(new BasicNameValuePair("data", encodedImage));
+		JSONArray result = makeHttpRequest(host+file, "POST", params);
+		if(result!=null && result.length()!=0)
+		{
+			try {
+				JSONObject jObject = result.getJSONObject(0);
+				int success = jObject.getInt("success");
+				return success==1;
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return false;
+	}
+	
+	public ArrayList<DBImage> getImages(long itemID)
+	{
+		String file = "getImages.php";
+		ArrayList<DBImage> images = new ArrayList<DBImage>();
+		ArrayList<NameValuePair> params = new ArrayList<NameValuePair>();
+		params.add(new BasicNameValuePair("itemID", itemID+""));
+		JSONArray result = makeHttpRequest(host+file, "GET", params);
+		if(result!=null&&result.length()!=0)
+		{
+			try {
+				for(int i = 0; i<result.length(); i++)
+				{
+					JSONObject jObject = result.getJSONObject(i);
+					long id = jObject.getLong("ID");
+					int ordinal = jObject.getInt("Ordinal");
+					String data = jObject.getString("Data");
+					byte[] bArray = Base64.decode(data, Base64.DEFAULT);
+					Bitmap b = BitmapFactory.decodeByteArray(bArray, 0, bArray.length);
+					images.add(new DBImage(id, itemID, ordinal, b));
+				}
+				return images;
 			} catch (JSONException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -730,12 +851,5 @@ public class DatabaseModel implements IDatabaseModel
 			}
 			return resultList;
 		}
-	}
-
-	@Override
-	public DBItem addItem(String name, String description, int typeID,
-			int categoryID, boolean isResolved, Date date, long posterID) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 }

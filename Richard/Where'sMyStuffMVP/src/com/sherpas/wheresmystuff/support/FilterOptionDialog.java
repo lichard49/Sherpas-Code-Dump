@@ -8,9 +8,9 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.DatePicker;
+import android.widget.ImageButton;
 
 import com.sherpas.wheresmystuff.R;
 
@@ -26,7 +26,7 @@ public class FilterOptionDialog extends Dialog
 	private CheckBox donation;
 	private CheckBox date;
 	private DatePicker startDate;
-	private Button filterFinish;
+	private ImageButton filterFinish;
 	private Bundle filters;
 	private WindowManager.LayoutParams lp;
 	
@@ -59,7 +59,7 @@ public class FilterOptionDialog extends Dialog
 		donation = (CheckBox) findViewById(R.id.donation_box);
 		date = (CheckBox) findViewById(R.id.date_box);
 		startDate = (DatePicker) findViewById(R.id.start_date);
-		filterFinish = (Button) findViewById(R.id.filter_finish);
+		filterFinish = (ImageButton) findViewById(R.id.filter_finish);
 		filterFinish.setOnClickListener(new View.OnClickListener()
 		{
 			public void onClick(View v)

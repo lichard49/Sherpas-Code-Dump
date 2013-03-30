@@ -41,14 +41,16 @@ public class SearchPresenter
 		{
 			list = model.getAllItems();
 		}
-		else if(bigF.equals("type"))
-		{
-			list = model.getItemsByTypeID(model.getTypeTable().get(filters.getString("type")));
-		}
 		else if(bigF.equals("category"))
 		{
+			System.out.println("Table: " + model.getTypeTable());
+			System.out.println("Filter: " + filters.getString("type"));
+			list = model.getItemsByTypeID(model.getTypeTable().get(filters.getString("category")));
+		}
+		else if(bigF.equals("type"))
+		{
 			System.out.println("filters: " + filters);
-			String categoryVal = filters.getString("category");
+			String categoryVal = filters.getString("type");
 			System.out.println("category: " + categoryVal);
 			Map<String, Integer> table = model.getCategoryTable();
 			System.out.println("table: " + table);
@@ -56,14 +58,26 @@ public class SearchPresenter
 		}
 		else if(bigF.equals("date"))
 		{
+			System.out.println("date: " + (Date)filters.getSerializable("date"));
 			list = model.getItemsPostedAfterDate((Date)filters.getSerializable("date"));
-			
 		}
-		for(DBItem i: list) System.out.println(i.getName());
-		DBItem[] items = new DBItem[list.size()];
-		for(int i = 0; i < list.size(); i++)
+		
+		DBItem[] items;
+		if(list != null)
 		{
-			items[i] = list.get(i);
+			items = new DBItem[list.size()];
+			for(int i = 0; i < list.size(); i++)
+			{
+				if(list.get(i) != null)
+				{
+					System.out.println(list.get(i).getName());
+					items[i] = list.get(i);
+				}
+			}
+		}
+		else
+		{
+			items = new DBItem[0];
 		}
 		
 		return new ItemAdapter(c, R.layout.search_item_layout, items);

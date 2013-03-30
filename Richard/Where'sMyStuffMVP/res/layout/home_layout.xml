@@ -27,15 +27,6 @@
         android:text="Welcome, "
         android:textAppearance="?android:attr/textAppearanceMedium" />
     
-    <Button
-        android:id="@+id/admin_panel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/greeting"
-        android:layout_alignParentRight="true"
-        android:visibility="gone"
-        android:text="Admin stuff" />
-    
     
     <TableLayout
         android:layout_width="fill_parent"
@@ -105,5 +96,17 @@
 	    android:background="@color/Black"
 	    android:paddingBottom="10dp"
 	    android:src="@drawable/signout" />
+
+    <Button
+        android:id="@+id/admin_panel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/greeting"
+        android:layout_alignBottom="@+id/greeting"
+        android:layout_alignParentRight="true"
+        android:background="@color/Black"
+        android:visibility="gone"
+        android:text="Admin stuff"
+        android:textColor="@color/Blue" />
     
  </RelativeLayout>

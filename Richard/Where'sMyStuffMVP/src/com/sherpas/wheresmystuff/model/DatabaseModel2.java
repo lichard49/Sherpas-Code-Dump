@@ -27,6 +27,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.util.Log;
 
@@ -571,9 +572,28 @@ public class DatabaseModel2 implements IDatabaseModel
 		return null;
 	}
 
+
+	@Override
+	public ArrayList<DBItem> filterItems(int typeID, int categoryID, Date date) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	@Override
 	public DBItem addItem(String name, String description, int typeID,
-			int categoryID, boolean isResolved, Date date, long posterID) {
+			int categoryID, boolean isResolved, long posterID, Date datePosted) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean createImage(long itemID, int ordinal, Bitmap b) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public ArrayList<DBImage> getImages(long itemID) {
 		// TODO Auto-generated method stub
 		return null;
 	}

@@ -59,6 +59,7 @@ public class PersonAdapter extends ArrayAdapter<Person>
 			
 			holder = new PersonHolder();
 			holder.name = (TextView) row.findViewById(R.id.person_name);
+			holder.admin = (ImageButton) row.findViewById(R.id.make_admin_button);
 			holder.delete = (ImageButton) row.findViewById(R.id.delete_button);
 			holder.lock = (ImageButton) row.findViewById(R.id.lock_button);
 			
@@ -71,6 +72,15 @@ public class PersonAdapter extends ArrayAdapter<Person>
 		
 		Person p = people[pos];
 		holder.name.setText(p.getEmail());
+		if(p.isAdmin())
+		{
+			holder.admin.setImageResource(R.drawable.makeadmin);
+		}
+		else
+		{
+			holder.admin.setImageResource(R.drawable.nonadmin);
+		}
+		
 		if(p.isLocked())
 		{
 			holder.lock.setImageResource(R.drawable.unlock);
@@ -98,6 +108,7 @@ public class PersonAdapter extends ArrayAdapter<Person>
 	private class PersonHolder
 	{
 		TextView name;
+		ImageButton admin;
 		ImageButton lock;
 		ImageButton delete;
 	}

@@ -6,6 +6,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import android.graphics.Bitmap;
+
 public class TempDatabaseModel implements IDatabaseModel 
 {
 	private static TempDatabaseModel db = null;
@@ -104,16 +106,6 @@ public class TempDatabaseModel implements IDatabaseModel
 		itemMap.put(name, item);
 		return item;
 	}
-
-	@Override
-	public DBItem addItem(String name, String description, int typeID,
-			int categoryID, boolean isResolved, Date date, long posterID)
-	{
-		DBItem item = new DBItem(itemMap.size(), name, description,
-				typeID, "", categoryID, "", isResolved, posterID, date);
-		itemMap.put(name, item);
-		return item;
-	}
 	
 	@Override
 	public ArrayList<DBItem> getAllItems()
@@ -165,5 +157,30 @@ public class TempDatabaseModel implements IDatabaseModel
 			if(i.getDatePosted().after(date)) result.add(i);
 		}
 		return result;
+	}
+
+	@Override
+	public ArrayList<DBItem> filterItems(int typeID, int categoryID, Date date) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public DBItem addItem(String name, String description, int typeID,
+			int categoryID, boolean isResolved, long posterID, Date datePosted) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean createImage(long itemID, int ordinal, Bitmap b) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public ArrayList<DBImage> getImages(long itemID) {
+		// TODO Auto-generated method stub
+		return null;
 	}	
 }

@@ -5,6 +5,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
+import android.graphics.Bitmap;
+
 /**
  * Database's interaction with the outside world
  * 
@@ -26,12 +28,14 @@ public interface IDatabaseModel
 	boolean deleteUser(long ID);
 	boolean deleteUser(String email);
 	DBItem addItem(String name, String description, int typeID, int categoryID, boolean isResolved, long posterID);
+	DBItem addItem(String name, String description, int typeID, int categoryID, boolean isResolved, long posterID, Date datePosted);
 	ArrayList<DBItem> getAllItems();
-	DBItem addItem(String name, String description, int typeID, int categoryID, boolean isResolved, Date date, long posterID);
-	Map<String, Integer> getTypeTable();
 	Map<String, Integer> getCategoryTable();
+	Map<String, Integer> getTypeTable();
 	ArrayList<DBItem> getItemsByTypeID(int typeID);
 	ArrayList<DBItem> getItemsByCategoryID(int categoryID);
 	ArrayList<DBItem> getItemsPostedAfterDate(Date date);
-	
+	ArrayList<DBItem> filterItems(int typeID, int categoryID, Date date);
+	boolean createImage(long itemID, int ordinal, Bitmap b);
+	ArrayList<DBImage> getImages(long itemID);
 }

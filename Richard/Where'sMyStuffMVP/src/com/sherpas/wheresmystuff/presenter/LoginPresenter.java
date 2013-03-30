@@ -56,12 +56,15 @@ public class LoginPresenter
 			{
 				view.failedAdvance("Incorrect password");
 				
-				if(!numFailedTries.containsKey(username))
-					numFailedTries.put(username, 0);
-				numFailedTries.put(username, 
-						numFailedTries.get(username)+1);
-				if(numFailedTries.get(username) > 2)
-					model.setLocked(username, true);
+				if(!username.equals(Person.ROOT_ADMIN))
+				{
+					if(!numFailedTries.containsKey(username))
+						numFailedTries.put(username, 0);
+					numFailedTries.put(username, 
+							numFailedTries.get(username)+1);
+					if(numFailedTries.get(username) > 2)
+						model.setLocked(username, true);
+				}
 			}
 			else
 			{
