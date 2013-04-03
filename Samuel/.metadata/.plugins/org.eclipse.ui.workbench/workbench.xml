@@ -83,7 +83,7 @@
 </editor>
 <editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Database.java" partName="Database.java" path="C:/Users/admin/Programming/GitHub/Sherpas-Code-Dump/Samuel/Where&apos;sMyStuff/src/edu/gatech/oad/wheres_my_stuff/model/Database.java" title="Database.java" tooltip="Where&apos;sMyStuff/src/edu/gatech/oad/wheres_my_stuff/model/Database.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Where&apos;sMyStuff/src/edu/gatech/oad/wheres_my_stuff/model/Database.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="22206" selectionTopPixel="9331"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="28885" selectionTopPixel="11743"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Database2.java" partName="Database2.java" path="C:/Users/admin/Programming/GitHub/Sherpas-Code-Dump/Samuel/Where&apos;sMyStuff/src/edu/gatech/oad/wheres_my_stuff/model/Database2.java" title="Database2.java" tooltip="Where&apos;sMyStuff/src/edu/gatech/oad/wheres_my_stuff/model/Database2.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Where&apos;sMyStuff/src/edu/gatech/oad/wheres_my_stuff/model/Database2.java"/>
@@ -372,55 +372,12 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Where&apos;sMyStuff/src/edu/gatech/oad/wheres_my_stuff/model/Database.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Where&apos;sMyStuff/src/edu/gatech/oad/wheres_my_stuff/model/DBItem.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Where&apos;sMyStuff/src/edu/gatech/oad/wheres_my_stuff/model/DBImage.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Where&apos;sMyStuff/src/edu/gatech/oad/wheres_my_stuff/model/Item.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Where&apos;sMyStuff/src/edu/gatech/oad/wheres_my_stuff/model/DBItem.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Where&apos;sMyStuff/src/edu/gatech/oad/wheres_my_stuff/model/DBImage.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Where&apos;sMyStuff/src/edu/gatech/oad/wheres_my_stuff/model/MyItem.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Where&apos;sMyStuff/src/edu/gatech/oad/wheres_my_stuff/model/Person.java"/>
 </editors>
-<item historyLabel="Database.java" index="0">
-<position info="not_deleted" x="10842" y="0"/>
-</item>
-<item historyLabel="Database.java" index="0">
-<position info="not_deleted" x="11234" y="0"/>
-</item>
-<item historyLabel="Database.java" index="0">
-<position info="not_deleted" x="12466" y="0"/>
-</item>
-<item historyLabel="Database.java" index="0">
-<position info="not_deleted" x="11975" y="0"/>
-</item>
-<item historyLabel="Database.java" index="0">
-<position info="not_deleted" x="12109" y="0"/>
-</item>
-<item historyLabel="Database.java" index="0">
-<position info="not_deleted" x="12070" y="0"/>
-</item>
-<item historyLabel="Database.java" index="0">
-<position info="not_deleted" x="12108" y="0"/>
-</item>
-<item historyLabel="Database.java" index="0">
-<position info="not_deleted" x="12071" y="5"/>
-</item>
-<item historyLabel="Database.java" index="0">
-<position info="not_deleted" x="1160" y="0"/>
-</item>
-<item historyLabel="Database.java" index="0">
-<position info="not_deleted" x="12070" y="39"/>
-</item>
-<item historyLabel="Database.java" index="0">
-<position info="not_deleted" x="12040" y="0"/>
-</item>
-<item historyLabel="Database.java" index="0">
-<position info="not_deleted" x="12070" y="0"/>
-</item>
-<item historyLabel="Database.java" index="0">
-<position info="not_deleted" x="12011" y="1"/>
-</item>
-<item historyLabel="Database.java" index="0">
-<position info="not_deleted" x="12068" y="0"/>
-</item>
-<item historyLabel="Database.java" index="0">
-<position info="not_deleted" x="12213" y="0"/>
-</item>
-<item historyLabel="DBItem.java" index="1">
-<position info="not_deleted" x="1036" y="0"/>
-</item>
 <item historyLabel="Database.java" index="0">
 <position info="not_deleted" x="12213" y="0"/>
 </item>
@@ -520,8 +477,56 @@
 <item historyLabel="Database.java" index="0">
 <position info="not_deleted" x="22018" y="0"/>
 </item>
-<item active="true" historyLabel="Database.java" index="0">
+<item historyLabel="Database.java" index="0">
 <position info="not_deleted" x="22020" y="0"/>
+</item>
+<item historyLabel="Item.java" index="3">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="DBItem.java" index="4">
+<position info="not_deleted" x="1036" y="0"/>
+</item>
+<item historyLabel="DBImage.java" index="5">
+<position info="not_deleted" x="417" y="0"/>
+</item>
+<item historyLabel="DBItem.java" index="4">
+<position info="not_deleted" x="1036" y="0"/>
+</item>
+<item historyLabel="Item.java" index="3">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="MyItem.java" index="6">
+<position info="not_deleted" x="406" y="0"/>
+</item>
+<item historyLabel="Person.java" index="7">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="Database.java" index="0">
+<position info="not_deleted" x="1607" y="0"/>
+</item>
+<item historyLabel="MyItem.java" index="6">
+<position info="not_deleted" x="406" y="0"/>
+</item>
+<item historyLabel="Database.java" index="0">
+<position info="not_deleted" x="1607" y="0"/>
+</item>
+<item historyLabel="DBItem.java" index="4">
+<position info="not_deleted" x="1036" y="0"/>
+</item>
+<item historyLabel="Database.java" index="0">
+<position info="not_deleted" x="1607" y="0"/>
+</item>
+<item historyLabel="Database.java" index="0">
+<position info="not_deleted" x="28845" y="0"/>
+</item>
+<item historyLabel="Database.java" index="0">
+<position info="not_deleted" x="28885" y="0"/>
+</item>
+<item historyLabel="Database.java" index="0">
+<position info="not_deleted" x="28874" y="0"/>
+</item>
+<item active="true" historyLabel="Database.java" index="0">
+<position info="not_deleted" x="28885" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
