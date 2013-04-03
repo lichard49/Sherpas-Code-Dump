@@ -834,6 +834,8 @@ public class Database {
 		        
 		        // try parse the string to a JSON object 
 		        try { 
+		        	if(json.charAt(0)!='[')
+		        		json = "["+json+"]";
 		           JSONArray jArray = new JSONArray(json); 
 		           resultList.add(jArray);
 		        } catch (JSONException e) { 
