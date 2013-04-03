@@ -5,7 +5,7 @@ import java.util.Date;
 public class DBItem
 {
 	private long ID, posterID, resolverID;
-	private String name, description, type, category;
+	private String name, description, type, category, city, state;
 	private int typeID, categoryID;
 	private double lat, lon, reward;
 	private Date datePosted, dateResolved;
@@ -168,5 +168,25 @@ public class DBItem
 	public void setIsResolved(boolean isResolved)
 	{
 		this.isResolved = isResolved;
+	}
+	
+	public String getCity()
+	{
+		return city;
+	}
+	
+	public void setCity(String city)
+	{
+		this.city = city;
+	}
+	
+	public String getState()
+	{
+		return state;
+	}
+	
+	public void setState(String state)
+	{
+		this.state = state;
 	}
 }

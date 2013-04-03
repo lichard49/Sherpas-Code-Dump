@@ -356,6 +356,28 @@ public class Database {
 		
 	}
 	
+	public boolean setItemCityState(long itemID, String city, String state)
+	{
+		String file = "setItemCityState.php";
+		ArrayList<NameValuePair> params = new ArrayList<NameValuePair>();
+		params.add(new BasicNameValuePair("ID", itemID+""));
+		params.add(new BasicNameValuePair("city", city));
+		params.add(new BasicNameValuePair("state", state));
+		JSONArray result = makeHttpRequest(host+file, "POST", params);
+		if(result!=null && result.length()!=0)
+		{
+			try {
+				JSONObject jObject = result.getJSONObject(0);
+				int success = jObject.getInt("success");
+				return (success==1);
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return false;
+	}
+	
 	public ArrayList<DBItem> getAllItems()
 	{
 		String file = "getAllItems.php";
@@ -499,7 +521,7 @@ public class Database {
 		return null;
 	}
 	
-	public ArrayList<DBItem> filterItems(int typeID, int categoryID, Date date)
+	public ArrayList<DBItem> filterItems(int typeID, int categoryID, Date date, String name, String description, String city, String state)
 	{
 		String file = "filterItems.php";
 		ArrayList<DBItem> items = new ArrayList<DBItem>();
@@ -518,6 +540,22 @@ public class Database {
 		{
 			params.add(new BasicNameValuePair("date", sdf.format(date)));
 		}
+		if(name!=null)
+		{
+			params.add(new BasicNameValuePair("name", name));
+		}
+		if(description!=null)
+		{
+			params.add(new BasicNameValuePair("description", description));
+		}
+		if(city!=null)
+		{
+			params.add(new BasicNameValuePair("city", city));
+		}
+		if(state!=null)
+		{
+			params.add(new BasicNameValuePair("state", state));
+		}
 		
 		JSONArray result = makeHttpRequest(host+file, "GET", params);
 		if(result!=null&&result.length()!=0)
@@ -526,15 +564,20 @@ public class Database {
 				for(int i = 0; i<result.length(); i++)
 				{
 					JSONObject jObject = result.getJSONObject(i);
-					String name = jObject.getString("Name");
-					String description = jObject.getString("Description");
+					String name2 = jObject.getString("Name");
+					String description2= jObject.getString("Description");
 					int typeID2 = jObject.getInt("TypeID");
 					int categoryID2 = jObject.getInt("CategoryID");
 					long id = jObject.getLong("ID");
 					boolean isResolved = jObject.getInt("IsResolved")==1;
 					long posterID = jObject.getLong("PosterID");
 					Date postedDate = sdf.parse(jObject.getString("DatePosted"));
-					items.add(new DBItem(id, name, description, typeID2, categoryID2, isResolved, posterID, postedDate));
+					DBItem item = new DBItem(id, name2, description2, typeID2, categoryID2, isResolved, posterID, postedDate);
+					if(city!=null)
+						item.setCity(jObject.getString("City"));
+					if(state!=null)
+						item.setState(jObject.getString("State"));
+					items.add(item);
 				}
 				return items;
 			} catch (JSONException e) {

@@ -577,7 +577,6 @@ public class Database {
 						item.setCity(jObject.getString("City"));
 					if(state!=null)
 						item.setState(jObject.getString("State"));
-					items.add(item);
 				}
 				return items;
 			} catch (JSONException e) {

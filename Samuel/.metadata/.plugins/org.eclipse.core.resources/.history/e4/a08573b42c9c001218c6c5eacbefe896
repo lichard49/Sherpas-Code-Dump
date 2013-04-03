@@ -565,19 +565,14 @@ public class Database {
 				{
 					JSONObject jObject = result.getJSONObject(i);
 					String name2 = jObject.getString("Name");
-					String description2= jObject.getString("Description");
+					String description = jObject.getString("Description");
 					int typeID2 = jObject.getInt("TypeID");
 					int categoryID2 = jObject.getInt("CategoryID");
 					long id = jObject.getLong("ID");
 					boolean isResolved = jObject.getInt("IsResolved")==1;
 					long posterID = jObject.getLong("PosterID");
 					Date postedDate = sdf.parse(jObject.getString("DatePosted"));
-					DBItem item = new DBItem(id, name2, description2, typeID2, categoryID2, isResolved, posterID, postedDate);
-					if(city!=null)
-						item.setCity(jObject.getString("City"));
-					if(state!=null)
-						item.setState(jObject.getString("State"));
-					items.add(item);
+					items.add(new DBItem(id, name, description, typeID2, categoryID2, isResolved, posterID, postedDate));
 				}
 				return items;
 			} catch (JSONException e) {
