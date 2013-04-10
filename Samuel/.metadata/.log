@@ -280,3 +280,13 @@ java.net.UnknownHostException: dl-ssl.google.com
 	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker.getAvailableRepositories(UpdateChecker.java:150)
 	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker.checkForUpdates(UpdateChecker.java:128)
 	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker$UpdateCheckThread.run(UpdateChecker.java:72)
+!SESSION 2013-04-08 00:29:55.868 -----------------------------------------------
+eclipse.buildId=2.8.1.201111221000-RELEASE
+java.version=1.7.0_01
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product com.springsource.sts.ide
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product com.springsource.sts.ide
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-04-08 00:49:38.161
+!MESSAGE Failed to load properties file for project 'wmsTest'

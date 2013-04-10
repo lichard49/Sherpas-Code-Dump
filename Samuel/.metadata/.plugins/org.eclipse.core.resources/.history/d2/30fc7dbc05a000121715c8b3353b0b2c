@@ -1,0 +1,23 @@
+import edu.gatech.oad.wheres_my_stuff.model.Database;
+import junit.framework.TestCase;
+
+
+public class test extends TestCase {
+
+	public void testDatabase() {
+		Database d = Database.getInstance();
+	}
+
+	public void testGetInstance() {
+		fail("Not yet implemented");
+	}
+
+	public void testCreateImage() {
+		fail("Not yet implemented");
+	}
+
+	public void testGetImages() {
+		fail("Not yet implemented");
+	}
+
+}

@@ -1,0 +1,22 @@
+import junit.framework.TestCase;
+
+
+public class test extends TestCase {
+
+	public void testDatabase() {
+		fail("Not yet implemented");
+	}
+
+	public void testGetInstance() {
+		fail("Not yet implemented");
+	}
+
+	public void testCreateImage() {
+		fail("Not yet implemented");
+	}
+
+	public void testGetImages() {
+		fail("Not yet implemented");
+	}
+
+}

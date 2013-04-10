@@ -1,9 +1,0 @@
-package edu.gatech.oad.wheres_my_stuff.model;
-
-import android.graphics.Bitmap;
-
-public class DBImage 
-{
-	private Bitmap b;
-	
-}
