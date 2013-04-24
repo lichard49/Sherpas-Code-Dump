@@ -9,7 +9,7 @@ $phone = $_POST['phone'];
 $password = $_POST['password'];
 $admin = $_POST['isAdmin'];
 
-$result=mysql_query("INSERT INTO Person(FirstName, LastName, Email, Phone, Password, IsAdmin) VALUES ('$firstName', '$lastName','$email', $phone, '$password', '$admin');");
+$result=mysql_query("INSERT INTO Person(FirstName, LastName, Email, Phone, Password, IsAdmin) VALUES ('$firstName', '$lastName','$email', '$phone', '$password', '$admin');");
 if($result)
 {
 	$output["ID"]=mysql_insert_id();

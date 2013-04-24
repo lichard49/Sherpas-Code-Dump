@@ -1,0 +1,11 @@
+package edu.gatech.oad.wheres_my_stuff.test;
+
+import junit.framework.TestCase;
+
+public class OnMakeAdminTest extends TestCase {
+
+	protected void setUp() throws Exception {
+		super.setUp();
+	}
+
+}

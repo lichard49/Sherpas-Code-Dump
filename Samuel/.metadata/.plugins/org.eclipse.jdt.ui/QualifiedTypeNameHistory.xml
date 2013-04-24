@@ -15,4 +15,9 @@
 <fullyQualifiedTypeName name="edu.gatech.oad.wheres_my_stuff.model.Database"/>
 <fullyQualifiedTypeName name="android.graphics.Bitmap"/>
 <fullyQualifiedTypeName name="android.graphics.BitmapFactory"/>
+<fullyQualifiedTypeName name="com.sherpas.wheresmystuff.presenter.AdminPresenter"/>
+<fullyQualifiedTypeName name="com.sherpas.wheresmystuff.model.DatabaseModel"/>
+<fullyQualifiedTypeName name="com.sherpas.wheresmystuff.model.Person"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.util.List"/>
 </qualifiedTypeNameHistroy>

@@ -38,7 +38,8 @@ if (isset($_GET['state']))
 	$state = $_GET['state'];
 	$conditions .= "State LIKE '%".$state."%'" . $and;
 }
-$conditions = substr($conditions, 0, -1*(strlen($and))); 
+/*$conditions = substr($conditions, 0, -1*(strlen($and))); */
+$conditions = $conditions . "1";
 $sql=mysql_query("select ID, Name, Description, TypeID, CategoryID, IsResolved, City, State, PosterID, DatePosted from Item WHERE ".$conditions.";");
 while($row=mysql_fetch_assoc($sql))
 $output[]=$row;

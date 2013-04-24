@@ -8,8 +8,7 @@
         android:targetSdkVersion="15" />
     
 	<uses-feature android:name="android.hardware.camera" />
-	<uses-permission android:name="android.permission.INTERNET" />
-	<instrumentation android:name="android.test.InstrumentationTestRunner" android:targetPackage="edu.gatech.oad.wheres_my_stuff"></instrumentation> 
+	<uses-permission android:name="android.permission.INTERNET" /> 
     
     <application
         android:icon="@drawable/ic_launcher"

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Black" >
+
+    <TextView
+        android:id="@+id/person_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="38dp"
+        android:text="Username"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <ImageButton
+        android:id="@+id/lock_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/person_name"
+        android:layout_marginRight="16dp"
+        android:background="@color/Black"
+        android:onClick="lockButtonHandler"
+        android:src="@drawable/unlock" />
+
+    <ImageButton
+        android:id="@+id/make_admin_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/delete_button"
+        android:layout_toLeftOf="@+id/delete_button"
+        android:onClick="makeAdminButtonHandler"
+        android:src="@drawable/makeadmin"
+        android:background="@color/Black" />
+
+    <ImageButton
+        android:id="@+id/delete_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/lock_button"
+        android:layout_toLeftOf="@+id/lock_button"
+        android:background="@color/Black"
+        android:onClick="deleteButtonHandler"
+        android:src="@drawable/delete" />
+
+</RelativeLayout>

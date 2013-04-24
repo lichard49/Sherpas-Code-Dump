@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Black" >
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/add_icon" />
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/imageView1"
+        android:id="@+id/detail_scroll">
+    
+	    <TableLayout
+	        android:id="@+id/item_settings_table"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginBottom="10dp"
+	        android:layout_marginLeft="5dp"
+	        android:layout_marginRight="5dp" >
+	
+	        <TableRow
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginBottom="5dp" >
+	            
+	            <TextView
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_marginRight="5dp"
+			        android:text="Type:"
+			        android:textAppearance="?android:attr/textAppearanceSmall"
+			        android:textColor="@color/White" />
+	            
+	            <Spinner
+			        android:id="@+id/type_spinner"
+			        style="@style/AppBaseTheme"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:background="@color/Blue"
+			        android:prompt="@string/choose_prompt"
+			        android:entries="@array/item_type_array"
+			        tools:listitem="@android:layout/simple_spinner_dropdown_item" />
+	            
+	        </TableRow>
+	
+	        <TableRow
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginBottom="5dp" >
+	            
+	            <TextView
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_marginRight="5dp"
+			        android:text="Item Name:"
+			        android:textAppearance="?android:attr/textAppearanceSmall" 
+			        android:textColor="@color/White"/>
+	            
+	            <EditText
+			        android:id="@+id/name_text_field"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:ems="10"
+			        android:inputType="textPersonName"
+			        android:background="@drawable/textbox_outline"
+			        android:textColor="@color/White" >
+			
+			        <requestFocus />
+			    </EditText>
+	            
+	        </TableRow>
+	
+	        <TableRow
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginBottom="5dp" >
+	            
+	            <TextView
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_marginRight="5dp"
+			        android:text="Description:"
+			        android:textAppearance="?android:attr/textAppearanceSmall"
+			        android:textColor="@color/White"/>
+	            
+	            <EditText
+			        android:id="@+id/description_text_field"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:minLines="5"
+			        android:inputType="textMultiLine"
+			        android:gravity="top"
+			        android:ems="10"
+			        android:background="@drawable/textbox_outline"
+			        android:textColor="@color/White" />
+	            
+	        </TableRow>
+	
+	        <TableRow
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginBottom="5dp" >
+	            
+	            <TextView
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_marginRight="5dp"
+			        android:text="Category:"
+			        android:textAppearance="?android:attr/textAppearanceSmall" 
+			        android:textColor="@color/White"/>
+	            
+	            <Spinner
+			        android:id="@+id/category_spinner"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:background="@color/Blue"
+			        android:entries="@array/category_array"
+			        android:prompt="@string/choose_prompt"
+			        tools:listitem="@android:layout/simple_spinner_dropdown_item" />
+	            
+	        </TableRow>
+	        
+	        <TableRow
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginBottom="5dp" >
+	            
+	            <TextView
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_marginRight="5dp"
+			        android:text="Location:"
+			        android:textAppearance="?android:attr/textAppearanceSmall"
+			        android:textColor="@color/White" />
+	            
+	            <EditText
+			        android:id="@+id/location_text_field"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:inputType="text"
+			        android:ems="10" 
+			        android:background="@drawable/textbox_outline"
+			        android:textColor="@color/White"/>
+	            
+	        </TableRow>
+	        
+	        <TableRow
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginBottom="5dp" >
+	            
+	            <TextView
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_marginRight="5dp"
+			        android:text="Reward ($):"
+			        android:textAppearance="?android:attr/textAppearanceSmall" 
+			        android:textColor="@color/White" />
+	            
+	            <EditText
+			        android:id="@+id/reward_text_field"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:ems="10"
+			        android:inputType="number"
+			        android:background="@drawable/textbox_outline"
+			        android:textColor="@color/White" />
+	            
+	        </TableRow>
+	        
+	        <TableRow
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginBottom="5dp" >
+	            
+	            <TextView
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_marginRight="5dp"
+			        android:text="Date:"
+			        android:textAppearance="?android:attr/textAppearanceSmall" 
+			        android:textColor="@color/White" />
+
+	            <DatePicker
+	                android:id="@+id/date_picker"
+	                android:scaleX="0.8"
+	                android:scaleY="0.8"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_marginRight="5dp" />
+	            
+	        </TableRow>
+	        
+	        <TableRow
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginBottom="5dp" >
+	            
+	            <ImageButton
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:id="@+id/picture_button"
+	                android:src="@drawable/camera"
+	                android:background="@color/Black" />
+	            
+	            <ImageView
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:id="@+id/item_image"
+	                android:background="@color/Black" />
+	            
+	        </TableRow>
+	        
+	        <TableRow
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content" >
+	            
+			    <ImageButton
+			        android:id="@+id/submit_button"
+			        android:contentDescription="Submit!"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_span="2"
+			        android:background="@color/Black"
+			        android:src="@drawable/submit_button" />
+	        </TableRow>
+	        
+	    </TableLayout>
+	
+	    
+	    
+    </ScrollView>
+    
+</RelativeLayout>
