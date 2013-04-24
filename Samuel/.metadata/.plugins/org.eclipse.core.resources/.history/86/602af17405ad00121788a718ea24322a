@@ -400,7 +400,7 @@ public class DatabaseModel implements IDatabaseModel
 	
 	public DBItem addItem(String name, String description, int typeID, int categoryID, boolean isResolved, double lat, double lon, long posterID, Date datePosted)
 	{
-		String file = "createItemLocation.php";
+		String file = "createItem.php";
 		ArrayList<NameValuePair> params = new ArrayList<NameValuePair>();
 		params.add(new BasicNameValuePair("name", name));
 		params.add(new BasicNameValuePair("description", description));
@@ -408,7 +408,7 @@ public class DatabaseModel implements IDatabaseModel
 		params.add(new BasicNameValuePair("categoryID", categoryID+""));
 		params.add(new BasicNameValuePair("isResolved", (isResolved?"1":"0")));
 		params.add(new BasicNameValuePair("lat", lat+""));
-		params.add(new BasicNameValuePair("lon", lon+""));
+		params.add(new BasicNameValuePaid("lon", lon+""));
 		params.add(new BasicNameValuePair("posterID", posterID+""));
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd");
 		params.add(new BasicNameValuePair("date", sdf.format(datePosted)));
@@ -423,7 +423,6 @@ public class DatabaseModel implements IDatabaseModel
 				{
 					long id = jObject.getLong("ID");
 					DBItem item = new DBItem(id, name, description, typeID, categoryID, isResolved, posterID, datePosted);
-					item.setLocation(lat, lon);
 					return item;
 				}
 			} catch (JSONException e) {

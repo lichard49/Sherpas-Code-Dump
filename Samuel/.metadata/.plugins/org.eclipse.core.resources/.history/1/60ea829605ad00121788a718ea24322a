@@ -400,7 +400,7 @@ public class DatabaseModel implements IDatabaseModel
 	
 	public DBItem addItem(String name, String description, int typeID, int categoryID, boolean isResolved, double lat, double lon, long posterID, Date datePosted)
 	{
-		String file = "createItemLocation.php";
+		String file = "createItem.php";
 		ArrayList<NameValuePair> params = new ArrayList<NameValuePair>();
 		params.add(new BasicNameValuePair("name", name));
 		params.add(new BasicNameValuePair("description", description));

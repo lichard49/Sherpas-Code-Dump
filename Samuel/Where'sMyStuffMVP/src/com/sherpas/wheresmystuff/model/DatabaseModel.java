@@ -398,6 +398,48 @@ public class DatabaseModel implements IDatabaseModel
 		return null;
 	}
 	
+	public DBItem addItem(String name, String description, int typeID, int categoryID, boolean isResolved, double lat, double lon, long posterID, Date datePosted)
+	{
+		String file = "createItemLocation.php";
+		ArrayList<NameValuePair> params = new ArrayList<NameValuePair>();
+		params.add(new BasicNameValuePair("name", name));
+		params.add(new BasicNameValuePair("description", description));
+		params.add(new BasicNameValuePair("typeID", typeID+""));
+		params.add(new BasicNameValuePair("categoryID", categoryID+""));
+		params.add(new BasicNameValuePair("isResolved", (isResolved?"1":"0")));
+		params.add(new BasicNameValuePair("lat", lat+""));
+		params.add(new BasicNameValuePair("lon", lon+""));
+		params.add(new BasicNameValuePair("posterID", posterID+""));
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd");
+		params.add(new BasicNameValuePair("date", sdf.format(datePosted)));
+		JSONArray result = makeHttpRequest(host+file, "POST", params);
+		if(result!=null && result.length()!=0)
+		{
+			try {
+				JSONObject jObject = result.getJSONObject(0);
+				int success = jObject.getInt("success");
+				System.out.println("success isssss " + success);
+				if(success==1)
+				{
+					long id = jObject.getLong("ID");
+					DBItem item = new DBItem(id, name, description, typeID, categoryID, isResolved, posterID, datePosted);
+					item.setLocation(lat, lon);
+					return item;
+				}
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				System.out.println("exception happened " + e.getMessage());
+			}
+		}
+		else
+		{
+			System.out.println(result + " was null");
+		}
+		return null;
+		
+	}
+	
 	public ArrayList<DBItem> getItemsByTypeID(int typeID)
 	{
 		String file = "getItemsByTypeID.php";
@@ -837,8 +879,7 @@ public class DatabaseModel implements IDatabaseModel
 		            continue;
 		        } 
 
-		        if(json.charAt(0)!='[')
-		        	json = "["+json+"]";
+		        System.out.println(json);
 		        
 		        // try parse the string to a JSON object 
 		        try { 
