@@ -879,7 +879,10 @@ public class DatabaseModel implements IDatabaseModel
 		            continue;
 		        } 
 
-		        System.out.println(json);
+		        //System.out.println(json);
+		        
+		        if(json.charAt(0)!='[')
+		        	json = "[" + json + "]";
 		        
 		        // try parse the string to a JSON object 
 		        try { 
