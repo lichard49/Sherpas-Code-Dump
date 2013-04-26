@@ -24,6 +24,8 @@ public class DBItem
 		this.isResolved = isResolved;
 		this.posterID = posterID;
 		this.datePosted = datePosted;
+		this.lat = -181;
+		this.lon = -181;
 	}
 	
 	public DBItem(long ID, String name, String description, int typeID, int categoryID,
@@ -37,6 +39,8 @@ public class DBItem
 		this.isResolved = isResolved;
 		this.posterID = posterID;
 		this.datePosted = datePosted;
+		this.lat = -181;
+		this.lon = -181;
 	}
 	
 	public long getID()

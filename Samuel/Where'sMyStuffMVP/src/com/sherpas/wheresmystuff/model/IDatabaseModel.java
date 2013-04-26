@@ -29,13 +29,14 @@ public interface IDatabaseModel
 	boolean deleteUser(String email);
 	DBItem addItem(String name, String description, int typeID, int categoryID, boolean isResolved, long posterID);
 	DBItem addItem(String name, String description, int typeID, int categoryID, boolean isResolved, long posterID, Date datePosted);
+	DBItem addItem(String name, String description, int typeID, int categoryID, boolean isResolved, double lat, double lon, long posterID, Date datePosted);
 	ArrayList<DBItem> getAllItems();
 	Map<String, Integer> getCategoryTable();
 	Map<String, Integer> getTypeTable();
 	ArrayList<DBItem> getItemsByTypeID(int typeID);
 	ArrayList<DBItem> getItemsByCategoryID(int categoryID);
 	ArrayList<DBItem> getItemsPostedAfterDate(Date date);
-	ArrayList<DBItem> filterItems(int typeID, int categoryID, Date date);
+	ArrayList<DBItem> filterItems(int typeID, int categoryID, Date date, String name, String description, String city, String state);
 	boolean createImage(long itemID, int ordinal, Bitmap b);
 	ArrayList<DBImage> getImages(long itemID);
 }

@@ -384,7 +384,10 @@ public class DatabaseModel implements IDatabaseModel
 					long posterID = jObject.getLong("PosterID");
 					SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd");
 					Date postedDate = sdf.parse(jObject.getString("DatePosted"));
-					items.add(new DBItem(id, name, description, typeID, categoryID, isResolved, posterID, postedDate));
+					DBItem it = new DBItem(id, name, description, typeID, categoryID, isResolved, posterID, postedDate);
+					if(!jObject.isNull("Lat") && !jObject.isNull("Lon"))
+						it.setLocation(jObject.getDouble("Lat"), jObject.getDouble("Lon"));
+					items.add(it);
 				}
 				return items;
 			} catch (JSONException e) {
@@ -583,7 +586,10 @@ public class DatabaseModel implements IDatabaseModel
 					boolean isResolved = jObject.getInt("IsResolved")==1;
 					long posterID = jObject.getLong("PosterID");
 					Date postedDate = sdf.parse(jObject.getString("DatePosted"));
-					items.add(new DBItem(id, name, description, typeID2, categoryID2, isResolved, posterID, postedDate));
+					DBItem it = new DBItem(id, name, description, typeID2, categoryID2, isResolved, posterID, postedDate);
+					if(!jObject.isNull("Lat") && !jObject.isNull("Lon"))
+						it.setLocation(jObject.getDouble("Lat"), jObject.getDouble("Lon"));
+					items.add(it);
 				}
 				return items;
 			} catch (JSONException e) {
@@ -597,6 +603,63 @@ public class DatabaseModel implements IDatabaseModel
 		return null;
 	}
 	
+	@Override
+	public ArrayList<DBItem> filterItems(int typeID, int categoryID, Date date,
+			String name, String description, String city, String state) {
+		String file = "filterItems.php";
+		ArrayList<DBItem> items = new ArrayList<DBItem>();
+		ArrayList<NameValuePair> params = new ArrayList<NameValuePair>();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd");
+		
+		if(typeID>-1)
+		{
+			params.add(new BasicNameValuePair("typeID", typeID+""));
+		}
+		if(categoryID>-1)
+		{
+			params.add(new BasicNameValuePair("categoryID", categoryID+""));
+		}
+		if(date!=null)
+		{
+			params.add(new BasicNameValuePair("date", sdf.format(date)));
+		}
+		if(name!=null)
+		{
+			params.add(new BasicNameValuePair("name", name));
+		}
+		
+		JSONArray result = makeHttpRequest(host+file, "GET", params);
+		if(result!=null&&result.length()!=0)
+		{
+			try {
+				for(int i = 0; i<result.length(); i++)
+				{
+					JSONObject jObject = result.getJSONObject(i);
+					String name2 = jObject.getString("Name");
+					String descriptionn = jObject.getString("Description");
+					int typeID2 = jObject.getInt("TypeID");
+					int categoryID2 = jObject.getInt("CategoryID");
+					long id = jObject.getLong("ID");
+					boolean isResolved = jObject.getInt("IsResolved")==1;
+					long posterID = jObject.getLong("PosterID");
+					Date postedDate = sdf.parse(jObject.getString("DatePosted"));
+					DBItem it = new DBItem(id, name2, descriptionn, typeID2, categoryID2, isResolved, posterID, postedDate);
+					if(!jObject.isNull("Lat") && !jObject.isNull("Lon"))
+						it.setLocation(jObject.getDouble("Lat"), jObject.getDouble("Lon"));
+					items.add(it);
+				}
+				return items;
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (ParseException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return null;
+	}
+
 	public Map<String, Integer> getCategoryTable()
 	{
 		String file = "getCategories.php";
@@ -883,6 +946,7 @@ public class DatabaseModel implements IDatabaseModel
 		        
 		        if(json.charAt(0)!='[')
 		        	json = "[" + json + "]";
+		        System.out.println("JSON is: " + json);
 		        
 		        // try parse the string to a JSON object 
 		        try { 
