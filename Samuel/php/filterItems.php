@@ -40,7 +40,7 @@ if (isset($_GET['state']))
 }
 /*$conditions = substr($conditions, 0, -1*(strlen($and))); */
 $conditions = $conditions . "1";
-$sql=mysql_query("select ID, Name, Description, TypeID, CategoryID, IsResolved, City, State, PosterID, DatePosted from Item WHERE ".$conditions.";");
+$sql=mysql_query("select ID, Name, Description, TypeID, CategoryID, IsResolved, Lat, Lon, City, State, PosterID, DatePosted from Item WHERE ".$conditions.";");
 while($row=mysql_fetch_assoc($sql))
 $output[]=$row;
 print(json_encode($output));
